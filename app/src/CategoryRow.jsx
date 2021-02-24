@@ -278,6 +278,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       OverpassTurboQuery += OverpassLoc + ";\n";
     }
 
+    console.log(typeof itemData);
+    console.log(typeof Loc);
+    console.log(typeof OverpassTurboQuery);
     console.log("Building Overpass Query..." + OverpassTurboQuery);
     return (
       <p>{OverpassTurboQuery}</p>
