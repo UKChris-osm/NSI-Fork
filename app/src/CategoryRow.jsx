@@ -276,7 +276,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
     if (locationSet) {
       // Build location search,
-      OverpassTurboQuery += locationSet + ";\n";
+      OverpassTurboQuery += JSON.parse(locationSet) + ";\n";
     }
     if (itemData.matchNames)
 	matchNames = itemData.matchNames;
