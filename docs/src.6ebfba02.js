@@ -12189,7 +12189,7 @@ function CategoryRow(props) {
 ;
 
 function buildOverpassTurbo(itemData) {
-  var OverpassLoc = JSON.stringify(itemData.locationSet);
+  var OverpassLoc = JSON.stringify(itemData.locationSet.include);
   var matchNames = "";
   var OverpassTurboQuery = "";
   OverpassTurboQuery += "[out:json][timeout:100];\n";
@@ -19499,7 +19499,7 @@ function Category(props) {
       data: data
     }), /*#__PURE__*/_react.default.createElement("table", {
       className: "summary"
-    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website"), /*#__PURE__*/_react.default.createElement("th", {
+    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags / NSI Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website"), /*#__PURE__*/_react.default.createElement("th", {
       className: "logo"
     }, "Commons Logo"))), /*#__PURE__*/_react.default.createElement("tbody", null, rows)));
   } else {

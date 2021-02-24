@@ -129,7 +129,7 @@ export default function Category(props) {
       <thead>
       <tr>
       <th>Name<br/>ID<br/>Locations</th>
-      <th>OpenStreetMap Tags</th>
+      <th>OpenStreetMap Tags / NSI Tags</th>
       <th>Wikidata Name/Description<br/>Official Website</th>
       <th className='logo'>Commons Logo</th>
       </tr>
