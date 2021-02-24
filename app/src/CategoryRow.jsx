@@ -280,6 +280,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     }
     if (itemData.matchNames)
 	matchNames = itemData.matchNames;
+    else
+	matchNames = "none set";
 
     console.log(matchNames);
     console.log(JSON.stringify(itemData));

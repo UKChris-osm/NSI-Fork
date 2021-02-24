@@ -12197,7 +12197,7 @@ function buildOverpassTurbo(Loc, itemData) {
     OverpassTurboQuery += OverpassLoc + ";\n";
   }
 
-  if (itemData.matchNames) matchNames = itemData.matchNames;
+  if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
   console.log(matchNames);
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
