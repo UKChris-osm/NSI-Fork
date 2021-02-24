@@ -12076,7 +12076,7 @@ function CategoryRow(props) {
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
     })), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
-    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item.locationSet)), /*#__PURE__*/_react.default.createElement("td", {
+    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item.locationSet, item)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
     }, logo(logos.wikidata)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -12186,7 +12186,7 @@ function CategoryRow(props) {
 
 ;
 
-function buildOverpassTurbo(Loc) {
+function buildOverpassTurbo(Loc, itemData) {
   var OverpassLoc = JSON.stringify(Loc);
   var OverpassTurboQuery = "";
   OverpassTurboQuery += "[out:json][timeout:100];\n";
