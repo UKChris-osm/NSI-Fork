@@ -12189,14 +12189,14 @@ function CategoryRow(props) {
 ;
 
 function buildOverpassTurbo(itemData) {
-  var OverpassLoc = JSON.stringify(itemData.locationSet.include);
+  var locationSet = JSON.stringify(itemData.locationSet.include);
   var matchNames = "";
   var OverpassTurboQuery = "";
   OverpassTurboQuery += "[out:json][timeout:100];\n";
 
-  if (OverpassLoc) {
+  if (locationSet) {
     // Build location search,
-    OverpassTurboQuery += OverpassLoc + ";\n";
+    OverpassTurboQuery += locationSet + ";\n";
   }
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";

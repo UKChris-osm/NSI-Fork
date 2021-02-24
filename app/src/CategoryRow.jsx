@@ -270,13 +270,13 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 };
 
   function buildOverpassTurbo(itemData) {
-    let OverpassLoc         = JSON.stringify(itemData.locationSet.include);
+    let locationSet         = JSON.stringify(itemData.locationSet.include);
     let matchNames          = "";
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
-    if (OverpassLoc) {
+    if (locationSet) {
       // Build location search,
-      OverpassTurboQuery += OverpassLoc + ";\n";
+      OverpassTurboQuery += locationSet + ";\n";
     }
     if (itemData.matchNames)
 	matchNames = itemData.matchNames;
