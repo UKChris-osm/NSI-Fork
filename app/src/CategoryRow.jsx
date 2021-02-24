@@ -175,6 +175,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         { wdLink(qid) }
         { siteLink(identities.website) }
         <CategoryRowSocialLinks {...identities} />
+        { buildOverpassTurbo(item.locationSet) }
       </td>
       <td className='logo'>{ logo(logos.wikidata) }</td>
       <td className='logo'>{ fblogo(identities.facebook, logos.facebook) }</td>
@@ -267,3 +268,18 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
   }
 
 };
+
+  function buildOverpassTurbo(Loc) {
+    let OverpassLoc         = JSON.stringify(Loc);
+    let OverpassTurboQuery  = "";
+	OverpassTurboQuery += "[out:json][timeout:100];\n"
+    if (OverpassLoc) {
+      // Build location search,
+      OverpassTurboQuery += OverpassLoc + ";\n";
+    }
+
+    console.log("Building Overpass Query..." + OverpassTurboQuery);
+    return (
+      <p>{OverpassTurboQuery}</p>
+    );
+  }

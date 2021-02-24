@@ -914,7 +914,7 @@ function normalizeName(name) {
   }
 
   if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === '') {
-    throw new TypeError('Invalid character in header field name');
+    throw new TypeError('Invalid character in header field name: "' + name + '"');
   }
 
   return name.toLowerCase();
@@ -1119,7 +1119,9 @@ function Body() {
       this._bodyText = body = Object.prototype.toString.call(body);
     }
 
-    if (!this.headers.get('content-type')) {
+    var contentType = this.headers.get('content-type');
+
+    if (!contentType) {
       if (typeof body === 'string') {
         this.headers.set('content-type', 'text/plain;charset=UTF-8');
       } else if (this._bodyBlob && this._bodyBlob.type) {
@@ -1127,6 +1129,10 @@ function Body() {
       } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
         this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
       }
+    } else if (contentType.indexOf('json') >= 0 && typeof this._bodyInit !== 'string') {
+      // Always pass a text representation of a non-stringified JSON body
+      // to `XMLHttpRequest.send` to retain a compatible behavior with the browser.
+      this._bodyInit = this._bodyText;
     }
   };
 
@@ -1328,7 +1334,7 @@ function Response(bodyInit, options) {
   this.type = 'default';
   this.status = options.status === undefined ? 200 : options.status;
   this.ok = this.status >= 200 && this.status < 300;
-  this.statusText = 'statusText' in options ? options.statusText : '';
+  this.statusText = options.statusText === undefined ? '' : '' + options.statusText;
   this.headers = new Headers(options.headers);
   this.url = options.url || '';
 
@@ -2361,23 +2367,20 @@ if ("production" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":"i17t"}],"hewo":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _setPrototypeOf;
-
+},{"./cjs/react-dom.production.min.js":"i17t"}],"QOoq":[function(require,module,exports) {
 function _setPrototypeOf(o, p) {
-  exports.default = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
 
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _setPrototypeOf(o, p);
 }
-},{}],"S11h":[function(require,module,exports) {
+
+module.exports = _setPrototypeOf;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],"TSz8":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2385,7 +2388,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _inheritsLoose;
 
-var _setPrototypeOf = _interopRequireDefault(require("@babel/runtime/helpers/esm/setPrototypeOf"));
+var _setPrototypeOf = _interopRequireDefault(require("@babel/runtime/helpers/setPrototypeOf"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2394,7 +2397,23 @@ function _inheritsLoose(subClass, superClass) {
   subClass.prototype.constructor = subClass;
   (0, _setPrototypeOf.default)(subClass, superClass);
 }
-},{"@babel/runtime/helpers/esm/setPrototypeOf":"hewo"}],"Asjh":[function(require,module,exports) {
+},{"@babel/runtime/helpers/setPrototypeOf":"QOoq"}],"S11h":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _index.default;
+  }
+});
+
+var _index = _interopRequireDefault(require("../inheritsLoose/_index.mjs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"../inheritsLoose/_index.mjs":"TSz8"}],"Asjh":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2493,7 +2512,7 @@ if ("production" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithThrowingShims":"wVGV"}],"SpjQ":[function(require,module,exports) {
+},{"./factoryWithThrowingShims":"wVGV"}],"N1tH":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2518,7 +2537,23 @@ function _extends() {
 
   return _extends.apply(this, arguments);
 }
-},{}],"UAZL":[function(require,module,exports) {
+},{}],"SpjQ":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _index.default;
+  }
+});
+
+var _index = _interopRequireDefault(require("../extends/_index.mjs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"../extends/_index.mjs":"N1tH"}],"UAZL":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4281,7 +4316,7 @@ if ("production" === 'production') {
 } else {
   module.exports = require('./cjs/react-is.development.js');
 }
-},{"./cjs/react-is.production.min.js":"RsE0"}],"Vabl":[function(require,module,exports) {
+},{"./cjs/react-is.production.min.js":"RsE0"}],"oNFU":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4303,7 +4338,23 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
-},{}],"ElIr":[function(require,module,exports) {
+},{}],"Vabl":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _index.default;
+  }
+});
+
+var _index = _interopRequireDefault(require("../objectWithoutPropertiesLoose/_index.mjs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"../objectWithoutPropertiesLoose/_index.mjs":"oNFU"}],"ElIr":[function(require,module,exports) {
 'use strict';
 
 var reactIs = require('react-is');
@@ -12025,7 +12076,7 @@ function CategoryRow(props) {
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
     })), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
-    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities)), /*#__PURE__*/_react.default.createElement("td", {
+    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item.locationSet)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
     }, logo(logos.wikidata)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -12134,6 +12185,20 @@ function CategoryRow(props) {
 }
 
 ;
+
+function buildOverpassTurbo(Loc) {
+  var OverpassLoc = JSON.stringify(Loc);
+  var OverpassTurboQuery = "";
+  OverpassTurboQuery += "[out:json][timeout:100];\n";
+
+  if (OverpassLoc) {
+    // Build location search,
+    OverpassTurboQuery += OverpassLoc + ";\n";
+  }
+
+  console.log("Building Overpass Query..." + OverpassTurboQuery);
+  return /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery);
+}
 },{"react":"n8MK","react-router-dom":"uc19","./CategoryRowSocialLinks":"GZ5J"}],"lmHt":[function(require,module,exports) {
 "use strict";
 
