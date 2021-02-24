@@ -284,6 +284,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 	matchNames = "none set";
 
     console.log(matchNames);
+    console.log(typeof matchNames);
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
     return (

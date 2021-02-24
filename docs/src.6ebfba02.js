@@ -11968,6 +11968,8 @@ var _CategoryRowSocialLinks = _interopRequireDefault(require("./CategoryRowSocia
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function CategoryRow(props) {
   var data = props.data;
   if (data.isLoading()) return;
@@ -12199,6 +12201,7 @@ function buildOverpassTurbo(Loc, itemData) {
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
   console.log(matchNames);
+  console.log(_typeof(matchNames));
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
   return /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery);
