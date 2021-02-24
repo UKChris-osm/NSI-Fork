@@ -12188,7 +12188,7 @@ function CategoryRow(props) {
 
 function buildOverpassTurbo(Loc, itemData) {
   var OverpassLoc = JSON.stringify(Loc);
-  var matchNames = NULL;
+  var matchNames = "";
   var OverpassTurboQuery = "";
   OverpassTurboQuery += "[out:json][timeout:100];\n";
 

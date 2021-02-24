@@ -271,7 +271,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
   function buildOverpassTurbo(Loc,itemData) {
     let OverpassLoc         = JSON.stringify(Loc);
-    let matchNames          = NULL;
+    let matchNames          = "";
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
     if (OverpassLoc) {
