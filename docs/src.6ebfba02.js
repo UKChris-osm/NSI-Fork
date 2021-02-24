@@ -12199,8 +12199,7 @@ function buildOverpassTurbo(Loc, itemData) {
   }
 
   console.log(_typeof(itemData));
-  console.log(_typeof(Loc));
-  console.log(_typeof(OverpassTurboQuery));
+  console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
   return /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery);
 }
