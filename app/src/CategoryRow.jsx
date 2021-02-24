@@ -271,14 +271,17 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
   function buildOverpassTurbo(Loc,itemData) {
     let OverpassLoc         = JSON.stringify(Loc);
+    let matchNames          = NULL;
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
     if (OverpassLoc) {
       // Build location search,
       OverpassTurboQuery += OverpassLoc + ";\n";
     }
+    if (itemData.matchNames)
+	matchNames = itemData.matchNames;
 
-    console.log(typeof itemData);
+    console.log(matchNames);
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
     return (
