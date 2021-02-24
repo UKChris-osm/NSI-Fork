@@ -12201,7 +12201,8 @@ function buildOverpassTurbo(itemData) {
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
   console.log(matchNames);
-  console.log("matchNames is a" + _typeof(matchNames));
+  console.log("matchNames is a " + _typeof(matchNames));
+  console.log("locationSet is a " + _typeof(locationSet));
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
   return /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery);
