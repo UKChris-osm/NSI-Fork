@@ -313,9 +313,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("locationSet is a " + typeof locationSet);
     console.log(locationSet.length);
     console.log(JSON.stringify(itemData));
-    console.log("Building Overpass Query..." + OverpassTurboQuery);
+    console.log("Building Overpass Query...");
+    console.log(OverpassTurboQuery);
 
     let OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
+    console.log(OverpassTurboQueryURI);
     return (
       <p><pre>{OverpassTurboQuery}</pre><br/>
       <a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
