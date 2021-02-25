@@ -298,6 +298,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	matchNames = "none set";
 
+    OverpassTurboQuery += "nwr[\"name\"=\"{itemData.name}\"](area.searchArea)\n";
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
     console.log(matchNames);
