@@ -305,7 +305,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
 
-    OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
+    let OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
     return (
       <>
       <p>{OverpassTurboQuery}</p>
