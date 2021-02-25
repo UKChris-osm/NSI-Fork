@@ -19240,8 +19240,6 @@ function CategoryRow(props) {
 ;
 
 function buildOverpassTurbo(primaryData, itemData, k, v) {
-  console.log(k);
-  console.log(v);
   var locationSet = itemData.locationSet.include;
   var matchNames = "";
   var name = "";
@@ -19280,13 +19278,13 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
-  styling += "  node[name=Test],\n";
-  styling += "  way[name=Test],\n";
-  styling += "  relation[name=Test]\n";
+  styling += "  node[name={name}],\n";
+  styling += "  way[name={name}],\n";
+  styling += "  relation[name={name}]\n";
   styling += "  { color:red; fill-color:red; }\n\n";
-  styling += "  node[Test=Test][name=Test],\n";
-  styling += "  way[Test=Test][name=Test],\n";
-  styling += "  relation[Test=Test][name=Test]\n";
+  styling += "  node[{k}={v}][name={name}],\n";
+  styling += "  way[{k}={v}][name={name}],\n";
+  styling += "  relation[{k}={v}][name={name}]\n";
   styling += "  { color:yellow; fill-color:yellow; }\n\n";
   styling += "  node[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
   styling += "  way[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
