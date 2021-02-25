@@ -180,7 +180,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         { wdLink(qid) }
         { siteLink(identities.website) }
         <CategoryRowSocialLinks {...identities} />
-        { buildOverpassTurbo("brand",item) }
+        { buildOverpassTurbo("brand",item,props) }
       </td>
       <td className='logo'>{ logo(logos.wikidata) }</td>
       <td className='logo'>{ fblogo(identities.facebook, logos.facebook) }</td>
@@ -274,8 +274,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
 };
 
-  function buildOverpassTurbo(primaryData,itemData) {
+  function buildOverpassTurbo(primaryData,itemData,propsData) {
     console.log(primaryData);
+    console.log(propsData);
+    console.log(JSON.stringify(propsData));
     let locationSet           = itemData.locationSet.include;
     let matchNames            = "";
     let name                  = "";
