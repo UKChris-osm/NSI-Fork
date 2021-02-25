@@ -298,7 +298,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	matchNames = "none set";
 
-    OverpassTurboQuery += "nwr[\"name\"=\"{itemData.name}\"](area.searchArea)\n";
+    OverpassTurboQuery += "nwr[\"name\"=\"${itemData.name}\"](area.searchArea)\n";
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
     console.log(matchNames);
@@ -312,7 +312,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     return (
       <>
       <p><pre>{OverpassTurboQuery}</pre></p>
-      <p><a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
+      <p><a href="https://overpass-turbo.eu/?Q=${OverpassTurboQueryURI}&R">Try query</a></p>
       </>
     );
   }
