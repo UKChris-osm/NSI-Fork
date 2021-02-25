@@ -301,7 +301,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(locationSet.length);
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
+
+    OverpassTurboQuery = encodeURIComponent(OverpassTurboQuery);
     return (
+      <>
       <p>{OverpassTurboQuery}</p>
+      <p><a href="https://overpass-turbo.eu/?Q=${OverpassTurboQuery}&R">Try query</a></p>
+      </>
     );
   }
