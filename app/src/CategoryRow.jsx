@@ -316,16 +316,16 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("Building Overpass Query...");
     console.log(OverpassTurboQuery);
 
-    let OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q=" 
+    let OverpassTurboQueryURI  = "\"https://overpass-turbo.eu/?Q=" 
         OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
-        OverpassTurboQueryURI += "&R";
+        OverpassTurboQueryURI += "&R\"";
 
     console.log(typeof OverpassTurboQueryURI);
     console.log(OverpassTurboQueryURI);
     return (
       <>
       <p><pre>{OverpassTurboQuery}</pre></p>
-      <p><a href="${OverpassTurboQueryURI}">Try query</a></p>
+      <p><a href={OverpassTurboQueryURI}>Try query</a></p>
       <p><pre>{OverpassTurboQuery}</pre></p>
       <p><pre>{OverpassTurboQueryURI}</pre></p>
       </>
