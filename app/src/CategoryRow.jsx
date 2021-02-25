@@ -299,8 +299,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	matchNames = "none set";
 
-    if (itemData.name)
-	name = itemData.name;
+    if (itemData.tags.name)
+	name = itemData.tags.name;
     else
 	name = "none set";
 
