@@ -19265,7 +19265,7 @@ function buildOverpassTurbo(itemData) {
   }
 
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
-  if (itemData.tags.brand) name = itemData.tags.brand;else name = "none set";
+  if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;";

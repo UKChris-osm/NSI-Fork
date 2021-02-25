@@ -315,9 +315,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 	name = "none set";
 
     if (itemData.tags.brand)
-	name = itemData.tags.brand;
+	brand = itemData.tags.brand;
     else
-	name = "none set";
+	brand = "none set";
 
 
     if (name != "none set")
