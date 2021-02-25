@@ -12217,9 +12217,9 @@ function buildOverpassTurbo(itemData) {
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query...");
   console.log(OverpassTurboQuery);
-  var OverpassTurboQueryURI = "\"https://overpass-turbo.eu/?Q=";
+  var OverpassTurboQueryURI = "https://overpass-turbo.eu/?Q=";
   OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
-  OverpassTurboQueryURI += "&R\"";
+  OverpassTurboQueryURI += "&R";
   console.log(_typeof(OverpassTurboQueryURI));
   console.log(OverpassTurboQueryURI);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
