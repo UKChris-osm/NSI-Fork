@@ -316,7 +316,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("Building Overpass Query...");
     console.log(OverpassTurboQuery);
 
-    let OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
+    let OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q=" 
+        OverpassTurboQueryURI =+ encodeURIComponent(OverpassTurboQuery);
+        OverpassTurboQueryURI =+ "&R";
+
     console.log(OverpassTurboQueryURI);
     return (
       <>
