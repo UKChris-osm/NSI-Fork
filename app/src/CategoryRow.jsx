@@ -274,10 +274,19 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let matchNames          = "";
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
-    if (locationSet) {
-      // Build location search,
-      OverpassTurboQuery += locationSet + ";\n";
+
+    // Build a basic location search if locationSet isn't set to world (001).
+    if (locationSet != 001) {
+      OverpassTurboQuery += "(\n";
+
+      let i;
+      for (i=0; i<locationSet.length; i++)
+        OverpassTurboQuery += "{{geocodeArea:" + locationSet + "}};\n";
+
+      OverpassTurboQuery += ")->.searchArea;\n";
+//      OverpassTurboQuery += locationSet + ";\n";
     }
+
     if (itemData.matchNames)
 	matchNames = itemData.matchNames;
     else
