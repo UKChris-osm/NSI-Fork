@@ -319,6 +319,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
     console.log(matchNames);
+    console.log(matchNames.length);
     console.log("matchNames is a " + typeof matchNames);
     console.log("locationSet is a " + typeof locationSet);
     console.log(locationSet.length);

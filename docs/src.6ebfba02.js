@@ -12214,6 +12214,7 @@ function buildOverpassTurbo(itemData) {
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;";
   console.log(matchNames);
+  console.log(matchNames.length);
   console.log("matchNames is a " + _typeof(matchNames));
   console.log("locationSet is a " + _typeof(locationSet));
   console.log(locationSet.length);
