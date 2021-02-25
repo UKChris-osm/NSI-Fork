@@ -12206,6 +12206,7 @@ function buildOverpassTurbo(itemData) {
   }
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
+  OverpassTurboQuery += "out body;\n>;\nout skel qt;";
   console.log(matchNames);
   console.log("matchNames is a " + _typeof(matchNames));
   console.log("locationSet is a " + _typeof(locationSet));
@@ -12213,7 +12214,7 @@ function buildOverpassTurbo(itemData) {
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
   var OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: "https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R"
   }, "Try query")));
 }

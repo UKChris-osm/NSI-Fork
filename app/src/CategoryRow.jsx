@@ -298,6 +298,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	matchNames = "none set";
 
+    OverpassTurboQuery += "out body;\n>;\nout skel qt;";
+
     console.log(matchNames);
     console.log("matchNames is a " + typeof matchNames);
     console.log("locationSet is a " + typeof locationSet);
@@ -308,7 +310,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
     return (
       <>
-      <p>{OverpassTurboQuery}</p>
+      <p><pre>{OverpassTurboQuery}</pre></p>
       <p><a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
       </>
     );
