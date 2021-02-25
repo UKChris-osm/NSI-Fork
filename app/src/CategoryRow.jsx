@@ -309,7 +309,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     return (
       <>
       <p>{OverpassTurboQuery}</p>
-      <p><a href="https://overpass-turbo.eu/?Q=${OverpassTurboQueryURI}&R">Try query</a></p>
+      <p><a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
       </>
     );
   }
