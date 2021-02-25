@@ -12192,6 +12192,7 @@ function buildOverpassTurbo(itemData) {
   var locationSet = itemData.locationSet.include;
   var matchNames = "";
   var name = "";
+  var brand = "";
   var OverpassTurboQuery = "";
   OverpassTurboQuery += "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001).
 
@@ -12208,7 +12209,9 @@ function buildOverpassTurbo(itemData) {
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
-  OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
+  if (itemData.tags.brand) name = itemData.tags.brand;else name = "none set";
+  if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
+  if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;";
   console.log(matchNames);
   console.log("matchNames is a " + _typeof(matchNames));

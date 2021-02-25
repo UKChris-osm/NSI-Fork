@@ -279,6 +279,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let locationSet         = itemData.locationSet.include;
     let matchNames          = "";
     let name                = "";
+    let brand               = "";
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
 
@@ -304,8 +305,17 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	name = "none set";
 
+    if (itemData.tags.brand)
+	name = itemData.tags.brand;
+    else
+	name = "none set";
 
-    OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
+
+    if (name != "none set")
+      OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
+    if (brand != "none set")
+      OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
+
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
     console.log(matchNames);
