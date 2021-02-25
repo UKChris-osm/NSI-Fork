@@ -320,6 +320,6 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(OverpassTurboQueryURI);
     return (
       <p><pre>{OverpassTurboQuery}</pre><br/>
-      <a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
+      <a href="https://overpass-turbo.eu/?Q={OverpassTurboQuery}&R">Try query</a></p>
     );
   }
