@@ -319,7 +319,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
     console.log(OverpassTurboQueryURI);
     return (
-      <p><pre>{OverpassTurboQueryURI}</pre><br/>
-      <a href="https://overpass-turbo.eu/?Q={OverpassTurboQuery}&R">Try query</a></p>
+      <p><pre>{OverpassTurboQuery}</pre><br/>{OverpassTurboQueryURI}
+      <a href="https://overpass-turbo.eu/?Q={OverpassTurboQueryURI}&R">Try query</a></p>
     );
   }
