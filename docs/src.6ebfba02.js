@@ -12208,7 +12208,7 @@ function buildOverpassTurbo(itemData) {
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
-  OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea)\n";
+  OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;";
   console.log(matchNames);
   console.log("matchNames is a " + _typeof(matchNames));
