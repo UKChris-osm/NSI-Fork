@@ -9,6 +9,8 @@ import { faSnapchatSquare } from '@fortawesome/free-brands-svg-icons';
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faVk } from '@fortawesome/free-brands-svg-icons';
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
+import { faUnlock } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function CategoryRowSocialLinks(props) {
