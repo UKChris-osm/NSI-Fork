@@ -17,6 +17,13 @@ export default function CategoryRowSocialLinks(props) {
   let items = [];
   let href;
 
+  items.push(
+    <FontAwesomeIcon icon={faLock} size='lg' />
+  );
+  items.push(
+    <FontAwesomeIcon icon={faUnlock} size='lg' />
+  );
+
   if (props.facebook) {
     href = 'https://www.facebook.com/' + props.facebook;
     items.push(
