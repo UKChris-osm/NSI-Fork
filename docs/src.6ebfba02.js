@@ -19129,7 +19129,7 @@ function CategoryRow(props) {
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
     }), /*#__PURE__*/_react.default.createElement("hr", null)), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
-    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item)), /*#__PURE__*/_react.default.createElement("td", {
+    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo("brand", item)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
     }, logo(logos.wikidata)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -19239,7 +19239,8 @@ function CategoryRow(props) {
 
 ;
 
-function buildOverpassTurbo(itemData) {
+function buildOverpassTurbo(primaryData, itemData) {
+  console.log(primaryData);
   var locationSet = itemData.locationSet.include;
   var matchNames = "";
   var name = "";
