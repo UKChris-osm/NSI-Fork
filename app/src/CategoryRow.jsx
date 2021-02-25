@@ -278,6 +278,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
   function buildOverpassTurbo(itemData) {
     let locationSet         = itemData.locationSet.include;
     let matchNames          = "";
+    let name                = "";
     let OverpassTurboQuery  = "";
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
 
@@ -298,7 +299,13 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	matchNames = "none set";
 
-    OverpassTurboQuery += "nwr[\"name\"=\"" + itemData.displayName + "\"](area.searchArea)\n";
+    if (itemData.name)
+	name = itemData.name;
+    else
+	name = "none set";
+
+
+    OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea)\n";
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
     console.log(matchNames);
