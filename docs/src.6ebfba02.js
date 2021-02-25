@@ -12198,16 +12198,26 @@ function buildOverpassTurbo(itemData) {
 
   if (locationSet != "001") {
     OverpassTurboQuery += "(\n";
-    var i;
 
-    for (i = 0; i < locationSet.length; i++) {
-      OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
+    var _i;
+
+    for (_i = 0; _i < locationSet.length; _i++) {
+      OverpassTurboQuery += "{{geocodeArea:" + locationSet[_i] + "}};\n";
     }
 
     OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
   }
 
-  if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
+  if (itemData.matchNames) {
+    matchNames = itemData.matchNames;
+
+    for (i = 0; i < locationSet.length; i++) {
+      OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
+    }
+  } else {
+    matchNames = "none set";
+  }
+
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
   if (itemData.tags.brand) name = itemData.tags.brand;else name = "none set";
   if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";

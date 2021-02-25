@@ -295,10 +295,14 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //      OverpassTurboQuery += locationSet + ";\n";
     }
 
-    if (itemData.matchNames)
-	matchNames = itemData.matchNames;
-    else
+    if (itemData.matchNames) {
+      matchNames = itemData.matchNames;
+
+      for (i=0; i<locationSet.length; i++)
+        OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
+    } else {
 	matchNames = "none set";
+    }
 
     if (itemData.tags.name)
 	name = itemData.tags.name;
