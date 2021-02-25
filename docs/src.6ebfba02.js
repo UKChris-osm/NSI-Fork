@@ -12076,7 +12076,7 @@ function CategoryRow(props) {
     }, /*#__PURE__*/_react.default.createElement("pre", {
       className: "tags",
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
-    })), /*#__PURE__*/_react.default.createElement("td", {
+    }), /*#__PURE__*/_react.default.createElement("hr", null)), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
     }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -12212,9 +12212,9 @@ function buildOverpassTurbo(itemData) {
   console.log(locationSet.length);
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query..." + OverpassTurboQuery);
-  OverpassTurboQuery = encodeURIComponent(OverpassTurboQuery);
+  OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, OverpassTurboQuery), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "https://overpass-turbo.eu/?Q=${OverpassTurboQuery}&R"
+    href: "https://overpass-turbo.eu/?Q=${OverpassTurboQueryURI}&R"
   }, "Try query")));
 }
 },{"react":"n8MK","react-router-dom":"uc19","./CategoryRowSocialLinks":"GZ5J"}],"lmHt":[function(require,module,exports) {

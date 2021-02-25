@@ -171,7 +171,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         </div>
       </td>
       <td className='count'>{count}</td>
-      <td className='tags'><pre className='tags' dangerouslySetInnerHTML={ highlight(tt, displayTags(tags)) } /></td>
+      <td className='tags'>
+        <pre className='tags' dangerouslySetInnerHTML={ highlight(tt, displayTags(tags)) } />
+        <hr/>
+      </td>
       <td className='wikidata'>
         <h3>{label}</h3>
         <span>{description}</span><br/>
@@ -302,11 +305,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
 
-    OverpassTurboQuery = encodeURIComponent(OverpassTurboQuery);
+    OverpassTurboQueryURI = encodeURIComponent(OverpassTurboQuery);
     return (
       <>
       <p>{OverpassTurboQuery}</p>
-      <p><a href="https://overpass-turbo.eu/?Q=${OverpassTurboQuery}&R">Try query</a></p>
+      <p><a href="https://overpass-turbo.eu/?Q=${OverpassTurboQueryURI}&R">Try query</a></p>
       </>
     );
   }
