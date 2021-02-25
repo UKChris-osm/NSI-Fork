@@ -19278,9 +19278,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
-  styling += "  node[name=${name}],\n";
-  styling += "  way[name=${name}],\n";
-  styling += "  relation[name=${name}]\n";
+  styling += "  node[name=" + name + "],\n";
+  styling += "  way[name=" + name + "],\n";
+  styling += "  relation[name=" + name + "]\n";
   styling += "  { color:red; fill-color:red; }\n\n";
   styling += "  node[${k}=${v}][name=${name}],\n";
   styling += "  way[${k}=${v}][name=${name}],\n";
