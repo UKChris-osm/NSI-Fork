@@ -287,7 +287,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "{{geocodeArea:" + locationSet + "}};\n";
+        OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
 
       OverpassTurboQuery += ")->.searchArea;\n";
 //      OverpassTurboQuery += locationSet + ";\n";

@@ -12199,7 +12199,7 @@ function buildOverpassTurbo(itemData) {
     var i;
 
     for (i = 0; i < locationSet.length; i++) {
-      OverpassTurboQuery += "{{geocodeArea:" + locationSet + "}};\n";
+      OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
     }
 
     OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
