@@ -12196,7 +12196,7 @@ function buildOverpassTurbo(itemData) {
 
   if (locationSet) {
     // Build location search,
-    OverpassTurboQuery += JSON.parse(locationSet) + ";\n";
+    OverpassTurboQuery += locationSet + ";\n";
   }
 
   if (itemData.matchNames) matchNames = itemData.matchNames;else matchNames = "none set";
