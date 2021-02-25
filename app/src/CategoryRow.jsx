@@ -275,12 +275,13 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 };
 
   function buildOverpassTurbo(itemData) {
-    let locationSet         = itemData.locationSet.include;
-    let matchNames          = "";
-    let name                = "";
-    let brand               = "";
-    let OverpassTurboQuery  = "";
-	OverpassTurboQuery += "[out:json][timeout:100];\n"
+    let locationSet           = itemData.locationSet.include;
+    let matchNames            = "";
+    let name                  = "";
+    let brand                 = "";
+    let styling               = "";
+    let OverpassTurboQueryURI = "";
+    let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
     // Build a basic location search if locationSet isn't set to world (001).
     if (locationSet != "001") {
@@ -322,6 +323,23 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     OverpassTurboQuery += "out body;\n>;\nout skel qt;";
 
+    styling += "{{style:\n";
+    styling += "node[name=Test],\n";
+    styling += "way[name=Test],\n";
+    styling += "relation[name=Test]\n";
+    styling += "{ color:red; fill-color:red; }\n";
+    styling += "node[Test=Test}][name=Test],\n";
+    styling += "way[Test=Test][name=Test],\n";
+    styling += "relation[Test=Test][name=Test]\n";
+    styling += "{ color:yellow; fill-color:yellow; }\n";
+    styling += "node[Test=Test}][name=Test][brand=Test][brand:wikidata=Test],\n";
+    styling += "way[Test=Test}][name=Test][brand=Test][brand:wikidata=Test],\n";
+    styling += "relation[Test=Test}][name=Test][brand=Test][brand:wikidata=Test]\n";
+    styling += "{ color:green; fill-color:green; }\n";
+    styling += "}}";
+
+    OverpassTurboQuery += styling;
+
     console.log(matchNames);
     console.log(matchNames.length);
     console.log("matchNames is a " + typeof matchNames);
@@ -331,9 +349,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("Building Overpass Query...");
     console.log(OverpassTurboQuery);
 
-    let OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q=" 
-        OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
-        OverpassTurboQueryURI += "&R";
+    OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q=" 
+    OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
+    OverpassTurboQueryURI += "&R";
+
+    
 
     return (
       <>

@@ -19244,8 +19244,9 @@ function buildOverpassTurbo(itemData) {
   var matchNames = "";
   var name = "";
   var brand = "";
-  var OverpassTurboQuery = "";
-  OverpassTurboQuery += "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001).
+  var styling = "";
+  var OverpassTurboQueryURI = "";
+  var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001).
 
   if (locationSet != "001") {
     OverpassTurboQuery += "(\n";
@@ -19275,6 +19276,21 @@ function buildOverpassTurbo(itemData) {
   if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;";
+  styling += "{{style:\n";
+  styling += "node[name=Test],\n";
+  styling += "way[name=Test],\n";
+  styling += "relation[name=Test]\n";
+  styling += "{ color:red; fill-color:red; }\n";
+  styling += "node[Test=Test}][name=Test],\n";
+  styling += "way[Test=Test][name=Test],\n";
+  styling += "relation[Test=Test][name=Test]\n";
+  styling += "{ color:yellow; fill-color:yellow; }\n";
+  styling += "node[Test=Test}][name=Test][brand=Test][brand:wikidata=Test],\n";
+  styling += "way[Test=Test}][name=Test][brand=Test][brand:wikidata=Test],\n";
+  styling += "relation[Test=Test}][name=Test][brand=Test][brand:wikidata=Test]\n";
+  styling += "{ color:green; fill-color:green; }\n";
+  styling += "}}";
+  OverpassTurboQuery += styling;
   console.log(matchNames);
   console.log(matchNames.length);
   console.log("matchNames is a " + _typeof(matchNames));
@@ -19283,7 +19299,7 @@ function buildOverpassTurbo(itemData) {
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query...");
   console.log(OverpassTurboQuery);
-  var OverpassTurboQueryURI = "https://overpass-turbo.eu/?Q=";
+  OverpassTurboQueryURI = "https://overpass-turbo.eu/?Q=";
   OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
   OverpassTurboQueryURI += "&R";
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
