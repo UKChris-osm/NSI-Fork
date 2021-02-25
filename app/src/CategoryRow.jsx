@@ -286,7 +286,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(matchNames);
     console.log("matchNames is a " + typeof matchNames);
     console.log("locationSet is a " + typeof locationSet);
-    console.log("locationSet is a " + typeof locationSet[0]);
+    console.log(locationSet.length);
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query..." + OverpassTurboQuery);
     return (
