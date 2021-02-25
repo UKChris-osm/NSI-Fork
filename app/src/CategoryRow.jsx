@@ -141,7 +141,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
           { searchWikipediaLink(n) }
         </div>
       </td>
-      <td className='tags'><pre className='tags' dangerouslySetInnerHTML={ highlight(tt, displayTags(tags)) } /></td>
+      <td className='tags'>
+        <pre className='tags' dangerouslySetInnerHTML={ highlight(tt, displayTags(tags)) } />
+        <hr/>
+      </td>
       <td className='wikidata'>
         <h3>{label}</h3>
         <span>{description}</span><br/>

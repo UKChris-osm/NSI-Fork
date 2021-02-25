@@ -12046,7 +12046,7 @@ function CategoryRow(props) {
     }, /*#__PURE__*/_react.default.createElement("pre", {
       className: "tags",
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
-    })), /*#__PURE__*/_react.default.createElement("td", {
+    }), /*#__PURE__*/_react.default.createElement("hr", null)), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
     }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -19507,7 +19507,7 @@ function Category(props) {
       data: data
     }), /*#__PURE__*/_react.default.createElement("table", {
       className: "summary"
-    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags / NSI Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website"), /*#__PURE__*/_react.default.createElement("th", {
+    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website"), /*#__PURE__*/_react.default.createElement("th", {
       className: "logo"
     }, "Commons Logo"))), /*#__PURE__*/_react.default.createElement("tbody", null, rows)));
   } else {
@@ -19521,7 +19521,7 @@ function Category(props) {
       data: data
     }), /*#__PURE__*/_react.default.createElement("table", {
       className: "summary"
-    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "Count"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website", /*#__PURE__*/_react.default.createElement("br", null), "Social Links"), /*#__PURE__*/_react.default.createElement("th", {
+    }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Name", /*#__PURE__*/_react.default.createElement("br", null), "ID", /*#__PURE__*/_react.default.createElement("br", null), "Locations"), /*#__PURE__*/_react.default.createElement("th", null, "Count"), /*#__PURE__*/_react.default.createElement("th", null, "OpenStreetMap Tags", /*#__PURE__*/_react.default.createElement("br", null), "NSI Tags"), /*#__PURE__*/_react.default.createElement("th", null, "Wikidata Name/Description", /*#__PURE__*/_react.default.createElement("br", null), "Official Website", /*#__PURE__*/_react.default.createElement("br", null), "Social Links"), /*#__PURE__*/_react.default.createElement("th", {
       className: "logo"
     }, "Commons Logo"), /*#__PURE__*/_react.default.createElement("th", {
       className: "logo"
