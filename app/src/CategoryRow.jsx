@@ -276,7 +276,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 	OverpassTurboQuery += "[out:json][timeout:100];\n"
 
     // Build a basic location search if locationSet isn't set to world (001).
-    if (locationSet != 001) {
+    if (locationSet != "001") {
       OverpassTurboQuery += "(\n";
 
       let i;
