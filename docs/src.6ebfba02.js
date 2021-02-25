@@ -19280,11 +19280,9 @@ function buildOverpassTurbo(itemData) {
   var OverpassTurboQueryURI = "https://overpass-turbo.eu/?Q=";
   OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
   OverpassTurboQueryURI += "&R";
-  console.log(_typeof(OverpassTurboQueryURI));
-  console.log(OverpassTurboQueryURI);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: OverpassTurboQueryURI
-  }, "Try query")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQueryURI)));
+  }, "Try query")));
 }
 },{"react":"n8MK","react-router-dom":"uc19","@fortawesome/react-fontawesome":"O6gX","@fortawesome/free-solid-svg-icons":"lmHt","./CategoryRowSocialLinks":"GZ5J"}],"z2FW":[function(require,module,exports) {
 "use strict";
