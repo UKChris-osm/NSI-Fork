@@ -12223,7 +12223,7 @@ function buildOverpassTurbo(itemData) {
   console.log(_typeof(OverpassTurboQueryURI));
   console.log(OverpassTurboQueryURI);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
-    href: "https://overpass-turbo.eu/?Q=${OverpassTurboQueryURI}&R"
+    href: "{OverpassTurboQueryURI}"
   }, "Try query")), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQueryURI)));
 }
 },{"react":"n8MK","react-router-dom":"uc19","./CategoryRowSocialLinks":"GZ5J"}],"lmHt":[function(require,module,exports) {
