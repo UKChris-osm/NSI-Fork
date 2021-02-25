@@ -12198,11 +12198,10 @@ function buildOverpassTurbo(itemData) {
 
   if (locationSet != "001") {
     OverpassTurboQuery += "(\n";
+    var i;
 
-    var _i;
-
-    for (_i = 0; _i < locationSet.length; _i++) {
-      OverpassTurboQuery += "{{geocodeArea:" + locationSet[_i] + "}};\n";
+    for (i = 0; i < locationSet.length; i++) {
+      OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
     }
 
     OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
@@ -12211,8 +12210,10 @@ function buildOverpassTurbo(itemData) {
   if (itemData.matchNames) {
     matchNames = itemData.matchNames;
 
-    for (i = 0; i < locationSet.length; i++) {
-      OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
+    var _i;
+
+    for (_i = 0; _i < locationSet.length; _i++) {
+      OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[_i] + "\"]\n";
     }
   } else {
     matchNames = "none set";

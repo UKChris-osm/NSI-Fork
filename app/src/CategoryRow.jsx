@@ -298,6 +298,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     if (itemData.matchNames) {
       matchNames = itemData.matchNames;
 
+      let i;
       for (i=0; i<locationSet.length; i++)
         OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
     } else {
