@@ -351,15 +351,18 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "  node[name=" + name + "],\n";
     styling += "  way[name=" + name + "],\n";
     styling += "  relation[name=" + name + "]\n";
-    styling += "  { color:red; fill-color:red; }\n\n";
+    styling += "  { color:red; fill-color:red; }\n";
+    styling += "  /* Red items might be the same name,*/\n  /* but not the same type or brand.*/\n\n";
     styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";
     styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
     styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
-    styling += "  { color:yellow; fill-color:yellow; }\n\n";
+    styling += "  { color:yellow; fill-color:yellow; }\n";
+    styling += "  /* Yello items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
     styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
     styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
     styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
     styling += "  { color:green; fill-color:green; }\n";
+    styling += "  /* Green items seem to have the right name, type and brand.*/\n\n";
     styling += "}}";
 
     OverpassTurboQuery += styling;
