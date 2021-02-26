@@ -279,6 +279,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let matchNames            = "";
     let name                  = "";
     let brand                 = "";
+    let brandWikidata         = "";
     let styling               = "";
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
@@ -316,6 +317,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	brand = "none set";
 
+    if (itemData.tags['brand:wikidata'])
+	brandWikidata = itemData.tags['brand:wikidata'];
+    else
+	brandWikidata = "none set";
+
 
     if (name != "none set")
       OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
@@ -333,9 +339,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
     styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
     styling += "  { color:yellow; fill-color:yellow; }\n\n";
-    styling += "  node[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
-    styling += "  way[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
-    styling += "  relation[Test=Test}][name=Test][brand=Test][brand:wikidata=Test]\n";
+    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+    styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+    styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
     styling += "  { color:green; fill-color:green; }\n";
     styling += "}}";
 

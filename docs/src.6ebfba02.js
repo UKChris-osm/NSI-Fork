@@ -19244,6 +19244,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var matchNames = "";
   var name = "";
   var brand = "";
+  var brandWikidata = "";
   var styling = "";
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001).
@@ -19274,6 +19275,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
 
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
+  if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
   if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
   if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
@@ -19286,9 +19288,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
   styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
   styling += "  { color:yellow; fill-color:yellow; }\n\n";
-  styling += "  node[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
-  styling += "  way[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
-  styling += "  relation[Test=Test}][name=Test][brand=Test][brand:wikidata=Test]\n";
+  styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+  styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+  styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
   styling += "  { color:green; fill-color:green; }\n";
   styling += "}}";
   OverpassTurboQuery += styling;
