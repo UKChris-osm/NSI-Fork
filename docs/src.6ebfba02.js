@@ -19270,9 +19270,10 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
       OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
     }
 
-    OverpassTurboQuery += ")->.searchArea;\n(\n"; //      OverpassTurboQuery += locationSet + ";\n";
-  } // Include any 'matchNames' as a name search.
+    OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
+  }
 
+  OverpassTurboQuery += "(\n"; // Include any 'matchNames' as a name search.
 
   if (itemData.matchNames) {
     matchNames = itemData.matchNames;

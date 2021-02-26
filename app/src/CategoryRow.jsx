@@ -308,11 +308,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
       }
 
-      OverpassTurboQuery += ")->.searchArea;\n(\n";
+      OverpassTurboQuery += ")->.searchArea;\n";
 //      OverpassTurboQuery += locationSet + ";\n";
     }
 
 
+    OverpassTurboQuery += "(\n";
 
     // Include any 'matchNames' as a name search.
     if (itemData.matchNames) {
