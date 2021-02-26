@@ -19246,10 +19246,12 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var brand = "";
   var brandWikidata = "";
   var styling = "";
+  var searchArea = "";
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001).
 
   if (locationSet != "001") {
+    searchArea = "(area.searchArea)";
     OverpassTurboQuery += "(\n";
     var i;
 
@@ -19276,8 +19278,8 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
-  if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
-  if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
+  if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
+  if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
   OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node[name=" + name + "],\n";

@@ -281,11 +281,13 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let brand                 = "";
     let brandWikidata         = "";
     let styling               = "";
+    let searchArea            = "";
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
     // Build a basic location search if locationSet isn't set to world (001).
     if (locationSet != "001") {
+      searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
       let i;
@@ -324,9 +326,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
 
     if (name != "none set")
-      OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"](area.searchArea);\n";
+      OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
     if (brand != "none set")
-      OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"](area.searchArea);\n";
+      OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
 
     OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
 
