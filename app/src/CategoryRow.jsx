@@ -333,6 +333,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     OverpassTurboQuery += "  );\nout body;\n>;\nout skel qt;\n\n";
 
     styling += "{{style:\n";
+    styling += "  node,way,relation\n";
+    styling += "  { color:gray; fill-color:gray; }\n\n";
     styling += "  node[name=" + name + "],\n";
     styling += "  way[name=" + name + "],\n";
     styling += "  relation[name=" + name + "]\n";
