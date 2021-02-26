@@ -291,7 +291,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
   console.log("# " + locationSet[0]);
-if (locationSet[0].isArray) {
+if (locationSet[0].typeof !== "string") {
   console.log("RADIUS SEARCH ...");
 } else {
       searchArea = "(area.searchArea)";
