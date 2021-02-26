@@ -19256,10 +19256,10 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     var i;
 
     for (i = 0; i < locationSet.length; i++) {
-      OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
+      OverpassTurboQuery += "  {{geocodeArea:" + locationSet[i] + "}};\n";
     }
 
-    OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
+    OverpassTurboQuery += ")->.searchArea;\n  (\n"; //      OverpassTurboQuery += locationSet + ";\n";
   } // Include any 'matchNames' as a name search.
 
 
@@ -19269,7 +19269,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     var _i;
 
     for (_i = 0; _i < locationSet.length; _i++) {
-      OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[_i] + "\"]\n";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]\n";
     }
   } else {
     matchNames = "none set";
@@ -19278,9 +19278,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
-  if (name != "none set") OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
-  if (brand != "none set") OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
-  OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
+  if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
+  if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
+  OverpassTurboQuery += "  )\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node[name=" + name + "],\n";
   styling += "  way[name=" + name + "],\n";

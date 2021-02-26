@@ -292,9 +292,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "{{geocodeArea:" + locationSet[i] + "}};\n";
+        OverpassTurboQuery += "  {{geocodeArea:" + locationSet[i] + "}};\n";
 
-      OverpassTurboQuery += ")->.searchArea;\n";
+      OverpassTurboQuery += ")->.searchArea;\n  (\n";
 //      OverpassTurboQuery += locationSet + ";\n";
     }
 
@@ -304,7 +304,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
     } else {
 	matchNames = "none set";
     }
@@ -326,11 +326,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
 
     if (name != "none set")
-      OverpassTurboQuery += "nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
     if (brand != "none set")
-      OverpassTurboQuery += "nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
 
-    OverpassTurboQuery += "out body;\n>;\nout skel qt;\n\n";
+    OverpassTurboQuery += "  )\nout body;\n>;\nout skel qt;\n\n";
 
     styling += "{{style:\n";
     styling += "  node[name=" + name + "],\n";
