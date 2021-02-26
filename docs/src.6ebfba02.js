@@ -19282,9 +19282,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   styling += "  way[name=" + name + "],\n";
   styling += "  relation[name=" + name + "]\n";
   styling += "  { color:red; fill-color:red; }\n\n";
-  styling += "  node[${k}=${v}][name=${name}],\n";
-  styling += "  way[${k}=${v}][name=${name}],\n";
-  styling += "  relation[${k}=${v}][name=${name}]\n";
+  styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";
+  styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
+  styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
   styling += "  { color:yellow; fill-color:yellow; }\n\n";
   styling += "  node[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
   styling += "  way[Test=Test][name=Test][brand=Test][brand:wikidata=Test],\n";
