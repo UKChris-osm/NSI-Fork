@@ -375,9 +375,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     OverpassTurboQuery += styling;
 
     console.log("=================================================")
+    console.log("matchNames is a " + typeof matchNames + ", with a length of " + matchNames.length + ", and contains ...");
     console.log(matchNames);
-    console.log(matchNames.length);
-    console.log("matchNames is a " + typeof matchNames);
     console.log("locationSet is a " + typeof locationSet);
     console.log(locationSet.length);
     console.log(JSON.stringify(itemData));
