@@ -282,6 +282,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let brandWikidata         = "";
     let styling               = "";
     let searchArea            = ""; // Should remain blank unless searchArea is being used.
+    let radius                = "25000"; // 25km radius, same as location-conflation radius.
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
@@ -289,6 +290,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     // or doesn't include a custom .geojson file.
 //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
+
+if (locationSet.isArray) {
+  console.log("RADIUS SEARCH ...");
+} else {
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
@@ -312,6 +317,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       OverpassTurboQuery += ")->.searchArea;\n";
 //      OverpassTurboQuery += locationSet + ";\n";
+}
     }
 
 

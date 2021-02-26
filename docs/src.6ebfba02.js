@@ -19248,32 +19248,38 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var styling = "";
   var searchArea = ""; // Should remain blank unless searchArea is being used.
 
+  var radius = "25000"; // 25km radius, same as location-conflation radius.
+
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
   //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
 
   if (locationSet != "001") {
-    searchArea = "(area.searchArea)";
-    OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
-    // OverpassTurbo doesn't recognise, and swap in one that it does.
+    if (locationSet.isArray) {
+      console.log("RADIUS SEARCH ...");
+    } else {
+      searchArea = "(area.searchArea)";
+      OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
+      // OverpassTurbo doesn't recognise, and swap in one that it does.
 
-    var i, thisLocation;
+      var i, thisLocation;
 
-    for (i = 0; i < locationSet.length; i++) {
-      thisLocation = locationSet[i]; // Check unsupported locations.
+      for (i = 0; i < locationSet.length; i++) {
+        thisLocation = locationSet[i]; // Check unsupported locations.
 
-      if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
-        thisLocation = "Wales";
-      if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
-        thisLocation = "Scotland";
-      if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
-        thisLocation = "Northern Ireland"; // Add 'geocodeArea' for this location
+        if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
+          thisLocation = "Wales";
+        if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
+          thisLocation = "Scotland";
+        if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
+          thisLocation = "Northern Ireland"; // Add 'geocodeArea' for this location
 
-      OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
+        OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
+      }
+
+      OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
     }
-
-    OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
   }
 
   OverpassTurboQuery += "(\n"; // Include any 'matchNames' as a name search.
