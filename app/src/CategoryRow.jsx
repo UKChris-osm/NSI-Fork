@@ -303,6 +303,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 	  thisLocation = "Wales";
         if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
 	  thisLocation = "Scotland";
+        if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
+	  thisLocation = "Northern Ireland";
 
         // Add 'geocodeArea' for this location
         OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";

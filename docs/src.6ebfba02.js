@@ -19265,7 +19265,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
       if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
         thisLocation = "Wales";
       if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
-        thisLocation = "Scotland"; // Add 'geocodeArea' for this location
+        thisLocation = "Scotland";
+      if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
+        thisLocation = "Northern Ireland"; // Add 'geocodeArea' for this location
 
       OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
     }
