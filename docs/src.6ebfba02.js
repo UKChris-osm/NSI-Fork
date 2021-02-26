@@ -19256,9 +19256,10 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
 
   if (locationSet != "001") {
-    console.log("# " + locationSet[0]);
+    console.log("##########################################################");
+    console.log("# " + locationSet[0] + "(" + _typeof(locationSet[0]) + ")");
 
-    if (locationSet[0].typeof === "number") {
+    if (locationSet[0][0].typeof === "number") {
       console.log("RADIUS SEARCH ...");
     } else {
       searchArea = "(area.searchArea)";
