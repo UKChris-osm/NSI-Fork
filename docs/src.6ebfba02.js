@@ -19250,8 +19250,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
+  //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
 
-  if (locationSet != "001" || !locationSet.includes(".geojson")) {
+  if (locationSet != "001") {
     searchArea = "(area.searchArea)";
     OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
     // OverpassTurbo doesn't recognise, and swap in one that it does.

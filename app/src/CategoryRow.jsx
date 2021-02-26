@@ -287,7 +287,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
-    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
+//    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
+    if (locationSet != "001") {
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
@@ -310,6 +311,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       OverpassTurboQuery += ")->.searchArea;\n(\n";
 //      OverpassTurboQuery += locationSet + ";\n";
     }
+
+
 
     // Include any 'matchNames' as a name search.
     if (itemData.matchNames) {
