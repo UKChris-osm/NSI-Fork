@@ -379,8 +379,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("locationSet is a " + typeof locationSet + "with a length of " + locationSet.length + ", and contains ...");
     console.log(locationSet);
 
-    console.log(JSON.stringify(itemData));
-    console.log("Building Overpass Query...");
+//    console.log(JSON.stringify(itemData));
+//    console.log("Building Overpass Query...");
 //    console.log(OverpassTurboQuery);
 
 //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.

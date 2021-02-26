@@ -19319,9 +19319,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   console.log("matchNames is a " + _typeof(matchNames) + ", with a length of " + matchNames.length + ", and contains ...");
   console.log(matchNames);
   console.log("locationSet is a " + _typeof(locationSet) + "with a length of " + locationSet.length + ", and contains ...");
-  console.log(locationSet);
-  console.log(JSON.stringify(itemData));
-  console.log("Building Overpass Query..."); //    console.log(OverpassTurboQuery);
+  console.log(locationSet); //    console.log(JSON.stringify(itemData));
+  //    console.log("Building Overpass Query...");
+  //    console.log(OverpassTurboQuery);
   //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
 
   OverpassTurboQueryURI = "https://tyrasd.github.io/overpass-turbo/?Q="; // Base URL (newer UI).
