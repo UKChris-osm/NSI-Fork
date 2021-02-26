@@ -377,8 +377,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("=================================================")
     console.log("matchNames is a " + typeof matchNames + ", with a length of " + matchNames.length + ", and contains ...");
     console.log(matchNames);
-    console.log("locationSet is a " + typeof locationSet);
-    console.log(locationSet.length);
+
+    console.log("locationSet is a " + typeof locationSet + "with a length of " + locationSet.length + ", and contains ...");
+    console.log(locationSet);
+
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query...");
 //    console.log(OverpassTurboQuery);
