@@ -296,6 +296,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       for (i=0; i<locationSet.length; i++) {
 	thisLocation = locationSet[i];
 
+        // Check unsupported locations.
+        if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
+	  thisLocation = "Wales";
+        if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
+	  thisLocation = "Scotland";
+
         // Add 'geocodeArea' for this location
         OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
       }
@@ -341,7 +347,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "{{style:\n";
     styling += "  node,way,relation\n";
     styling += "  { color:gray; fill-color:gray; }\n";
-    styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name.*/\n\n";
+    styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name or type.*/\n\n";
     styling += "  node[name=" + name + "],\n";
     styling += "  way[name=" + name + "],\n";
     styling += "  relation[name=" + name + "]\n";
