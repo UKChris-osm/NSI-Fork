@@ -19286,8 +19286,6 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     for (_i = 0; _i < locationSet.length; _i++) {
       OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"] // This is a matchName.\n";
     }
-  } else {
-    matchNames = "none set";
   }
 
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
