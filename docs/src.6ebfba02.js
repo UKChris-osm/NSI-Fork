@@ -19321,10 +19321,14 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   console.log(locationSet.length);
   console.log(JSON.stringify(itemData));
   console.log("Building Overpass Query...");
-  console.log(OverpassTurboQuery);
-  OverpassTurboQueryURI = "https://overpass-turbo.eu/?Q=";
-  OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
-  OverpassTurboQueryURI += "&R";
+  console.log(OverpassTurboQuery); //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
+
+  OverpassTurboQueryURI = "https://tyrasd.github.io/overpass-turbo/?Q="; // Base URL (newer UI).
+
+  OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery); // Encoded query.
+
+  OverpassTurboQueryURI += "&R"; // Autorun query upon loading.
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: OverpassTurboQueryURI
   }, "Try query")));

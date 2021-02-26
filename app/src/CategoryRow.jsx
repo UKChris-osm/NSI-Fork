@@ -381,9 +381,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("Building Overpass Query...");
     console.log(OverpassTurboQuery);
 
-    OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q=" 
-    OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery);
-    OverpassTurboQueryURI += "&R";
+//  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
+    OverpassTurboQueryURI  = "https://tyrasd.github.io/overpass-turbo/?Q="; // Base URL (newer UI).
+    OverpassTurboQueryURI += encodeURIComponent(OverpassTurboQuery); // Encoded query.
+    OverpassTurboQueryURI += "&R"; // Autorun query upon loading.
 
     
 
