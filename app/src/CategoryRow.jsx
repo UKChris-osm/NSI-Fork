@@ -304,7 +304,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]\n";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]\n // This is a matchName.";
     } else {
 	matchNames = "none set";
     }

@@ -19269,7 +19269,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     var _i;
 
     for (_i = 0; _i < locationSet.length; _i++) {
-      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]\n";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]\n // This is a matchName.";
     }
   } else {
     matchNames = "none set";
