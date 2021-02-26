@@ -19280,7 +19280,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
   if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
   if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
-  OverpassTurboQuery += "  )\nout body;\n>;\nout skel qt;\n\n";
+  OverpassTurboQuery += "  );\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node[name=" + name + "],\n";
   styling += "  way[name=" + name + "],\n";

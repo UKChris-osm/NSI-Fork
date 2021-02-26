@@ -330,7 +330,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     if (brand != "none set")
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
 
-    OverpassTurboQuery += "  )\nout body;\n>;\nout skel qt;\n\n";
+    OverpassTurboQuery += "  );\nout body;\n>;\nout skel qt;\n\n";
 
     styling += "{{style:\n";
     styling += "  node[name=" + name + "],\n";
