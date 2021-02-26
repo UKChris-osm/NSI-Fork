@@ -285,8 +285,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
-    // Build a basic location search if locationSet isn't set to world (001).
-    if (locationSet != "001") {
+    // Build a basic location search if locationSet isn't set to world (001)
+    // or doesn't include a custom .geojson file.
+    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
@@ -357,7 +358,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
     styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
     styling += "  { color:yellow; fill-color:yellow; }\n";
-    styling += "  /* Yello items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
+    styling += "  /* Yellow items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
     styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
     styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
     styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
