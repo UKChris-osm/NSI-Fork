@@ -294,7 +294,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       for (i=0; i<locationSet.length; i++)
         OverpassTurboQuery += "  {{geocodeArea:" + locationSet[i] + "}};\n";
 
-      OverpassTurboQuery += ")->.searchArea;\n  (\n";
+      OverpassTurboQuery += ")->.searchArea;\n(\n";
 //      OverpassTurboQuery += locationSet + ";\n";
     }
 
@@ -330,7 +330,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     if (brand != "none set")
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
 
-    OverpassTurboQuery += "  );\nout body;\n>;\nout skel qt;\n\n";
+    OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
 
     styling += "{{style:\n";
     styling += "  node,way,relation\n";
