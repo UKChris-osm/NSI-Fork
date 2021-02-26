@@ -290,7 +290,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     // or doesn't include a custom .geojson file.
 //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
-
+  console.log("# " + locationSet[0]);
 if (locationSet[0].isArray) {
   console.log("RADIUS SEARCH ...");
 } else {
