@@ -19283,7 +19283,8 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node,way,relation\n";
-  styling += "  { color:gray; fill-color:gray; }\n\n";
+  styling += "  { color:gray; fill-color:gray; }\n";
+  styling += "  // Gray items might be part of the same brand, but not the same name.\n\n";
   styling += "  node[name=" + name + "],\n";
   styling += "  way[name=" + name + "],\n";
   styling += "  relation[name=" + name + "]\n";
