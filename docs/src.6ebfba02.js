@@ -19252,11 +19252,15 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
 
   if (locationSet != "001") {
     searchArea = "(area.searchArea)";
-    OverpassTurboQuery += "(\n";
-    var i;
+    OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
+    // OverpassTurbo doesn't recognise, and swap in one that it does.
+
+    var i, thisLocation;
 
     for (i = 0; i < locationSet.length; i++) {
-      OverpassTurboQuery += "  {{geocodeArea:" + locationSet[i] + "}};\n";
+      thisLocation = locationSet[i]; // Add 'geocodeArea' for this location
+
+      OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
     }
 
     OverpassTurboQuery += ")->.searchArea;\n(\n"; //      OverpassTurboQuery += locationSet + ";\n";

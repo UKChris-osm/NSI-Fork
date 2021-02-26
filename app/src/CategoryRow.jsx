@@ -290,9 +290,15 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
-      let i;
-      for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "  {{geocodeArea:" + locationSet[i] + "}};\n";
+      // Loop through each location, check to see if it's one that
+      // OverpassTurbo doesn't recognise, and swap in one that it does.
+      let i,thisLocation;
+      for (i=0; i<locationSet.length; i++) {
+	thisLocation = locationSet[i];
+
+        // Add 'geocodeArea' for this location
+        OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
+      }
 
       OverpassTurboQuery += ")->.searchArea;\n(\n";
 //      OverpassTurboQuery += locationSet + ";\n";
