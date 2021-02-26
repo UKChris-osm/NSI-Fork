@@ -19284,7 +19284,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   styling += "{{style:\n";
   styling += "  node,way,relation\n";
   styling += "  { color:gray; fill-color:gray; }\n";
-  styling += "  // Gray items might be part of the same brand, but not the same name.\n\n";
+  styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name.*/\n\n";
   styling += "  node[name=" + name + "],\n";
   styling += "  way[name=" + name + "],\n";
   styling += "  relation[name=" + name + "]\n";
