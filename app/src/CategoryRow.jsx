@@ -281,7 +281,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let brand                 = "";
     let brandWikidata         = "";
     let styling               = "";
-    let searchArea            = "";
+    let searchArea            = ""; // Should remain blank unless searchArea is being used.
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
@@ -323,7 +323,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<locationSet.length; i++)
-        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]\n // This is a matchName.";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"] // This is a matchName.\n";
     } else {
 	matchNames = "none set";
     }
@@ -374,6 +374,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     OverpassTurboQuery += styling;
 
+    console.log("=================================================")
     console.log(matchNames);
     console.log(matchNames.length);
     console.log("matchNames is a " + typeof matchNames);
@@ -381,7 +382,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(locationSet.length);
     console.log(JSON.stringify(itemData));
     console.log("Building Overpass Query...");
-    console.log(OverpassTurboQuery);
+//    console.log(OverpassTurboQuery);
 
 //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
     OverpassTurboQueryURI  = "https://tyrasd.github.io/overpass-turbo/?Q="; // Base URL (newer UI).

@@ -19246,7 +19246,8 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var brand = "";
   var brandWikidata = "";
   var styling = "";
-  var searchArea = "";
+  var searchArea = ""; // Should remain blank unless searchArea is being used.
+
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
@@ -19283,7 +19284,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     var _i;
 
     for (_i = 0; _i < locationSet.length; _i++) {
-      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]\n // This is a matchName.";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"] // This is a matchName.\n";
     }
   } else {
     matchNames = "none set";
@@ -19316,14 +19317,15 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   styling += "  /* Green items seem to have the right name, type and brand.*/\n\n";
   styling += "}}";
   OverpassTurboQuery += styling;
+  console.log("=================================================");
   console.log(matchNames);
   console.log(matchNames.length);
   console.log("matchNames is a " + _typeof(matchNames));
   console.log("locationSet is a " + _typeof(locationSet));
   console.log(locationSet.length);
   console.log(JSON.stringify(itemData));
-  console.log("Building Overpass Query...");
-  console.log(OverpassTurboQuery); //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
+  console.log("Building Overpass Query..."); //    console.log(OverpassTurboQuery);
+  //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.
 
   OverpassTurboQueryURI = "https://tyrasd.github.io/overpass-turbo/?Q="; // Base URL (newer UI).
 
