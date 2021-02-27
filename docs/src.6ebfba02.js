@@ -19263,6 +19263,8 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
 
     if (!isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ...");
+      searchArea = "(around:radius,locationSet[0][1],locationSet[0][0])";
+      console.log(searchArea);
     } else {
       console.log("AREA SEARCH ...");
       searchArea = "(area.searchArea)";
