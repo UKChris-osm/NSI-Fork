@@ -18906,12 +18906,12 @@ function CategoryRowSocialLinks(props) {
   console.log(URL);
   console.log(URLcheck);
 
-  if (URLCheck === TRUE) {
+  if (URLcheck === TRUE) {
     items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
       icon: _freeSolidSvgIcons.faLock,
       size: "lg"
     }));
-  } else if (URLCheck === FALSE) {
+  } else if (URLcheck === FALSE) {
     items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
       icon: _freeSolidSvgIcons.faUnlock,
       size: "lg"
