@@ -291,7 +291,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
       if (!isNaN(locationSet[0][0])) {
-        // LocationSet Array within an Array & is a number, so likely GPS / Radius combo.
+        // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
         // OverpassTurbo uses "around" function, but requires coords to be swapped.
         searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ")";
       } else {
