@@ -19261,7 +19261,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
     console.log("# " + locationSet[0][0] + " (" + _typeof(locationSet[0][0]) + ")");
     console.log("# " + locationSet[0][1] + " (" + _typeof(locationSet[0][1]) + ")");
 
-    if (!isNanN(locationSet[0][0])) {
+    if (!isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ...");
     } else {
       console.log("AREA SEARCH ...");
