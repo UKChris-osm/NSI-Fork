@@ -294,7 +294,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
   console.log("# " + locationSet[0] + " (" + typeof locationSet[0] + ")");
   console.log("# " + locationSet[0][0] + " (" + typeof locationSet[0][0] + ")");
   console.log("# " + locationSet[0][1] + " (" + typeof locationSet[0][1] + ")");
-if (locationSet[0][0].typeof === "number") {
+if (!isNanN(locationSet[0][0])) {
   console.log("RADIUS SEARCH ...");
 } else {
   console.log("AREA SEARCH ...");
