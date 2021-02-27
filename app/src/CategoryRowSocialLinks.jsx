@@ -16,13 +16,10 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 export default function CategoryRowSocialLinks(props) {
   let items = [];
   let href;
-  let URL,URLcheck;
-
-  console.log(typeof props);
-  console.log(props);
+  let URLcheck;
 
   if (props.website) {
-    href = props.website
+    href = props.website;
     URLcheck = href.startsWith("https://");
 
     if (URLcheck === true) {

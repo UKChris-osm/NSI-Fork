@@ -18889,14 +18889,10 @@ var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function CategoryRowSocialLinks(props) {
   var items = [];
   var href;
-  var URL, URLcheck;
-  console.log(_typeof(props));
-  console.log(props);
+  var URLcheck;
 
   if (props.website) {
     href = props.website;
