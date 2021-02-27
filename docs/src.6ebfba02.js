@@ -18899,23 +18899,20 @@ function CategoryRowSocialLinks(props) {
   console.log(props);
 
   if (props.website) {
-    URL = props.website;
-    URLcheck = URL.startsWith("https://");
-  }
+    href = props.website;
+    URLcheck = href.startsWith("https://");
 
-  console.log(URL);
-  console.log(URLcheck);
-
-  if (URLcheck === true) {
-    items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-      icon: _freeSolidSvgIcons.faLock,
-      size: "lg"
-    }));
-  } else if (URLcheck === false) {
-    items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-      icon: _freeSolidSvgIcons.faUnlock,
-      size: "lg"
-    }));
+    if (URLcheck === true) {
+      items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+        icon: _freeSolidSvgIcons.faLock,
+        size: "lg"
+      }));
+    } else {
+      items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+        icon: _freeSolidSvgIcons.faUnlock,
+        size: "lg"
+      }));
+    }
   }
 
   if (props.facebook) {

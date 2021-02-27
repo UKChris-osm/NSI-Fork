@@ -22,21 +22,18 @@ export default function CategoryRowSocialLinks(props) {
   console.log(props);
 
   if (props.website) {
-    URL = props.website
-    URLcheck = URL.startsWith("https://");
-  }
+    href = props.website
+    URLcheck = href.startsWith("https://");
 
-  console.log(URL);
-  console.log(URLcheck);
-
-  if (URLcheck === true) {
-    items.push(
-      <FontAwesomeIcon icon={faLock} size='lg' />
-    );
-  } else if (URLcheck === false) {
-    items.push(
-      <FontAwesomeIcon icon={faUnlock} size='lg' />
-    );
+    if (URLcheck === true) {
+      items.push(
+        <FontAwesomeIcon icon={faLock} size='lg' />
+      );
+    } else {
+      items.push(
+        <FontAwesomeIcon icon={faUnlock} size='lg' />
+      );
+    }
   }
 
   if (props.facebook) {
