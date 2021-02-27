@@ -19258,10 +19258,13 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   if (locationSet != "001") {
     console.log("##########################################################");
     console.log("# " + locationSet[0] + " (" + _typeof(locationSet[0]) + ")");
+    console.log("# " + locationSet[0][0] + " (" + _typeof(locationSet[0][0]) + ")");
+    console.log("# " + locationSet[0][1] + " (" + _typeof(locationSet[0][1]) + ")");
 
     if (locationSet[0][0].typeof === "number") {
       console.log("RADIUS SEARCH ...");
     } else {
+      console.log("AREA SEARCH ...");
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
       // OverpassTurbo doesn't recognise, and swap in one that it does.
