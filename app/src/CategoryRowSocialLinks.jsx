@@ -17,7 +17,6 @@ export default function CategoryRowSocialLinks(props) {
   let items = [];
   let href;
   let URL,URLcheck;
-  let lockIcon = "insecure";
 
   console.log(typeof props);
   console.log(props);
@@ -30,11 +29,11 @@ export default function CategoryRowSocialLinks(props) {
   console.log(URL);
   console.log(URLcheck);
 
-  if (lockIcon == "secure") {
+  if (URLCheck === TRUE) {
     items.push(
       <FontAwesomeIcon icon={faLock} size='lg' />
     );
-  } else if (lockIcon == "insecure") {
+  } else if (URLCheck === FALSE) {
     items.push(
       <FontAwesomeIcon icon={faUnlock} size='lg' />
     );

@@ -18895,7 +18895,6 @@ function CategoryRowSocialLinks(props) {
   var items = [];
   var href;
   var URL, URLcheck;
-  var lockIcon = "insecure";
   console.log(_typeof(props));
   console.log(props);
 
@@ -18907,12 +18906,12 @@ function CategoryRowSocialLinks(props) {
   console.log(URL);
   console.log(URLcheck);
 
-  if (lockIcon == "secure") {
+  if (URLCheck === TRUE) {
     items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
       icon: _freeSolidSvgIcons.faLock,
       size: "lg"
     }));
-  } else if (lockIcon == "insecure") {
+  } else if (URLCheck === FALSE) {
     items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
       icon: _freeSolidSvgIcons.faUnlock,
       size: "lg"
