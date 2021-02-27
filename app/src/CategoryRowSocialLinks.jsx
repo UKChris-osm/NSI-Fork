@@ -29,11 +29,11 @@ export default function CategoryRowSocialLinks(props) {
   console.log(URL);
   console.log(URLcheck);
 
-  if (URLcheck === TRUE) {
+  if (URLcheck === true) {
     items.push(
       <FontAwesomeIcon icon={faLock} size='lg' />
     );
-  } else if (URLcheck === FALSE) {
+  } else if (URLcheck === false) {
     items.push(
       <FontAwesomeIcon icon={faUnlock} size='lg' />
     );
