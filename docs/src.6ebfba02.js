@@ -18892,7 +18892,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function CategoryRowSocialLinks(props) {
   var items = [];
   var href;
-  var lockIcon = "secure";
+  var lockIcon = "insecure";
 
   if (lockIcon == "secure") {
     items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
