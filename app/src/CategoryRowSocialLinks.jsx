@@ -16,13 +16,18 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 export default function CategoryRowSocialLinks(props) {
   let items = [];
   let href;
+  let lockIcon = "secure";
 
-  items.push(
-    <FontAwesomeIcon icon={faLock} size='lg' />
-  );
-  items.push(
-    <FontAwesomeIcon icon={faUnlock} size='lg' />
-  );
+
+  if (lockIcon == "secure") {
+    items.push(
+      <FontAwesomeIcon icon={faLock} size='lg' />
+    );
+  } else if (lockIcon == "insecure") {
+    items.push(
+      <FontAwesomeIcon icon={faUnlock} size='lg' />
+    );
+  }
 
   if (props.facebook) {
     href = 'https://www.facebook.com/' + props.facebook;

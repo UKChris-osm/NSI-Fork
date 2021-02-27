@@ -18892,14 +18892,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function CategoryRowSocialLinks(props) {
   var items = [];
   var href;
-  items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: _freeSolidSvgIcons.faLock,
-    size: "lg"
-  }));
-  items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: _freeSolidSvgIcons.faUnlock,
-    size: "lg"
-  }));
+  var lockIcon = "secure";
+
+  if (lockIcon == "secure") {
+    items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+      icon: _freeSolidSvgIcons.faLock,
+      size: "lg"
+    }));
+  } else if (lockIcon == "insecure") {
+    items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+      icon: _freeSolidSvgIcons.faUnlock,
+      size: "lg"
+    }));
+  }
 
   if (props.facebook) {
     href = 'https://www.facebook.com/' + props.facebook;
