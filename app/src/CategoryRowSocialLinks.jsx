@@ -16,8 +16,13 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 export default function CategoryRowSocialLinks(props) {
   let items = [];
   let href;
+  let URL;
   let lockIcon = "insecure";
 
+  if (props.website)
+    URL = props.website
+
+  console.log(URL);
 
   if (lockIcon == "secure") {
     items.push(
