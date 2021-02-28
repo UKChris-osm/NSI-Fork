@@ -310,6 +310,8 @@ tbody td.wikidata div.viewlink {
 }
 
 .sociallinks svg.fa-instagram,
+.sociallinks svg.fa-lock,
+.sociallinks svg.fa-unlock,
 .sociallinks svg.fa-vk {
   color: white;
   background: black;
