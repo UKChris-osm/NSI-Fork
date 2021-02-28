@@ -330,7 +330,7 @@ tbody td.wikidata div.viewlink {
   background: #67e;
 }
 .sociallinks svg.fa-lock   { background: green; }
-.sociallinks svg.fa-unlock { backgound:  red;   }
+.sociallinks svg.fa-unlock { background: red;   }
 
 .dark .sociallinks a svg.fa-instagram,
 .dark .sociallinks a svg.fa-vk,
