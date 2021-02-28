@@ -287,7 +287,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
     console.log("=================================================");
-    console.log("==" + itemData.displayName);
+    console.log("== " + itemData.displayName);
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
