@@ -323,14 +323,15 @@ tbody td.wikidata div.viewlink {
 
 /* invert certain social icons so they match the others */
 .sociallinks a svg.fa-instagram,
-.sociallinks svg.fa-lock,
-.sociallinks svg.fa-unlock,
 .sociallinks a svg.fa-vk,
 .sociallinks a:visited svg.fa-instagram,
 .sociallinks a:visited svg.fa-vk {
   color: white;
   background: #67e;
 }
+.sociallinks svg.fa-lock   { background: green; }
+.sociallinks svg.fa-unlock { background: red; }
+
 .dark .sociallinks a svg.fa-instagram,
 .dark .sociallinks a svg.fa-vk,
 .dark .sociallinks a:visited svg.fa-instagram,
