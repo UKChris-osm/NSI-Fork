@@ -24,7 +24,7 @@ export default function CategoryRowSocialLinks(props) {
 
     if (URLcheck === true) {
       items.push(
-        <span title='non-ssl web site'><FontAwesomeIcon icon={faLock} size='lg' /></span>
+        <span title='ssl web site'><FontAwesomeIcon icon={faLock} size='lg' /></span>
       );
     } else {
       items.push(

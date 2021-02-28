@@ -18900,7 +18900,7 @@ function CategoryRowSocialLinks(props) {
 
     if (URLcheck === true) {
       items.push( /*#__PURE__*/_react.default.createElement("span", {
-        title: "non-ssl web site"
+        title: "ssl web site"
       }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
         icon: _freeSolidSvgIcons.faLock,
         size: "lg"

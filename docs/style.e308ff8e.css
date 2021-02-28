@@ -329,8 +329,8 @@ tbody td.wikidata div.viewlink {
   color: white;
   background: #67e;
 }
-.sociallinks svg.fa-lock   { background: green; }
-.sociallinks svg.fa-unlock { background: red; }
+.sociallinks svg.fa-lock   { color: green; }
+.sociallinks svg.fa-unlock { color: red; }
 
 .dark .sociallinks a svg.fa-instagram,
 .dark .sociallinks a svg.fa-vk,
