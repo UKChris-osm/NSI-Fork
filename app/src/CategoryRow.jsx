@@ -334,7 +334,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       let i;
       for (i=0; i<matchNames.length; i++)
-        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + "; // This is a matchName.\n";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + ";\n    // The above is a matchName.\n";
     }
 
     if (itemData.tags.name)
