@@ -18899,15 +18899,19 @@ function CategoryRowSocialLinks(props) {
     URLcheck = href.startsWith("https://");
 
     if (URLcheck === true) {
-      items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+      items.push( /*#__PURE__*/_react.default.createElement("span", {
+        title: "non-ssl web site"
+      }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
         icon: _freeSolidSvgIcons.faLock,
         size: "lg"
-      }));
+      })));
     } else {
-      items.push( /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+      items.push( /*#__PURE__*/_react.default.createElement("span", {
+        title: "non-ssl web site"
+      }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
         icon: _freeSolidSvgIcons.faUnlock,
         size: "lg"
-      }));
+      })));
     }
   }
 

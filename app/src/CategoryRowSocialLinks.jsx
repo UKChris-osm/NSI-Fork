@@ -24,11 +24,11 @@ export default function CategoryRowSocialLinks(props) {
 
     if (URLcheck === true) {
       items.push(
-        <FontAwesomeIcon icon={faLock} size='lg' />
+        <span title='non-ssl web site'><FontAwesomeIcon icon={faLock} size='lg' /></span>
       );
     } else {
       items.push(
-        <FontAwesomeIcon icon={faUnlock} size='lg' />
+        <span title='non-ssl web site'><FontAwesomeIcon icon={faUnlock} size='lg' /></span>
       );
     }
   }
