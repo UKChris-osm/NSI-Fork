@@ -19265,7 +19265,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var radius = "25000"; // 25km radius, same as location-conflation radius.
 
   var OverpassTurboQueryURI = "";
-  var OverpassTurboQuery = "[out:json][timeout:100];\n"; // Build a basic location search if locationSet isn't set to world (001)
+  var OverpassTurboQuery = "[out:json][timeout:100];\n";
+  console.log("=================================================");
+  console.log("==" + itemData.displayName); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
   //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
 
@@ -19338,7 +19340,6 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   styling += "  /* Green items seem to have the right name, type and brand.*/\n\n";
   styling += "}}";
   OverpassTurboQuery += styling;
-  console.log("=================================================");
   console.log("matchNames is a " + _typeof(matchNames) + ", with a length of " + matchNames.length + ", and contains ...");
   console.log(matchNames);
   console.log("locationSet is a " + _typeof(locationSet) + ", with a length of " + locationSet.length + ", and contains ...");
