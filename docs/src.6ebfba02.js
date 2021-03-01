@@ -19308,7 +19308,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
 
     var _i;
 
-    OverpassTurboQuery += "  // matchName search:\n";
+    OverpassTurboQuery += "  // matchNames search:\n";
 
     for (_i = 0; _i < matchNames.length; _i++) {
       OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]" + searchArea + ";\n";
