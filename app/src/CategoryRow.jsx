@@ -333,8 +333,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       matchNames = itemData.matchNames;
 
       let i;
+
+      OverpassTurboQuery += "  // matchName search:\n";
       for (i=0; i<matchNames.length; i++)
-        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + ";\n    // The above is a matchName.\n";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + ";\n";
       OverpassTurboQuery += "\n";
     }
 
