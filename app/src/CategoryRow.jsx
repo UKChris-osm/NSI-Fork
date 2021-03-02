@@ -295,7 +295,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     if (locationSet != "001") {
       if (locationSet.endsWith(".geojson")) {
         console.log("POLY SEARCH ...");
-        searchArea = "(poly:\"\")";
+        searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
       } else if (!isNaN(locationSet[0][0])) {
         console.log("RADIUS SEARCH ...");
 
