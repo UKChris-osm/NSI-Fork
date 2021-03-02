@@ -275,7 +275,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 };
 
   function buildOverpassTurbo(primaryData,itemData,k,v) {
-    let locationSet           = itemData.locationSet.include;
+    let locationSet           = itemData.locationSet.include; // locationSet data should always exist.
     let matchNames            = "";
     let name                  = "";
     let brand                 = "";
@@ -293,12 +293,17 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     // or doesn't include a custom .geojson file.
 //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
-      if (!isNaN(locationSet[0][0])) {
+      if (locationSet.endsWith(".geojson")) {
+        console.log("POLY SEARCH ...");
+        searchArea = "(poly:\"\")";
+      } else if (!isNaN(locationSet[0][0])) {
+        console.log("RADIUS SEARCH ...");
+
         // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
         // OverpassTurbo uses "around" function, but requires coords to be swapped.
         searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ")";
       } else {
-  console.log("AREA SEARCH ...");
+      console.log("AREA SEARCH ...");
       searchArea = "(area.searchArea)";
       OverpassTurboQuery += "(\n";
 
