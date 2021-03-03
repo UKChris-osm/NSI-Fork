@@ -19286,7 +19286,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   console.log("locJSON typeof: " + _typeof(locJSON));
   console.log(locJSON);
   console.log("locJSON.features typeof: " + _typeof(locJSON.features));
-  console.log(locJSON.features); // Build a basic location search if locationSet isn't set to world (001)
+  console.log(locJSON.features);
+  console.log("locJSON.features[0] typeof: " + _typeof(locJSON.features[0]));
+  console.log(locJSON.features[0]); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
 
   if (locationSet[0] != "001") {
