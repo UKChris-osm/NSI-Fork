@@ -19279,6 +19279,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n";
   console.log("=================================================");
+  console.log("t: " + t);
+  console.log("k: " + k);
+  console.log("v: " + v);
   console.log("== " + itemData.displayName);
   console.log("locationset typeof: " + _typeof(locationSet));
   console.log(locationSet);
