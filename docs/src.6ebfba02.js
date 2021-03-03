@@ -19038,8 +19038,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function CategoryRow(props) {
   var data = props.data;
   if (data.isLoading()) return;
-  console.log("props: " + props);
-  console.log("props.data: " + props.data);
+  console.log("props: ");
+  console.log(props);
+  console.log("props.data: ");
+  console.log(props.data);
   var item = props.item;
   var t = props.t;
   var k = props.k;

@@ -7,8 +7,10 @@ export default function CategoryRow(props) {
   const data = props.data;
   if (data.isLoading()) return;
 
-  console.log("props: " + props);
-  console.log("props.data: " + props.data);
+  console.log("props: ");
+  console.log(props);
+  console.log("props.data: ");
+  console.log(props.data);
 
   const item = props.item;
   const t = props.t;
