@@ -19307,8 +19307,13 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
     if (locationSet[0].endsWith(".geojson")) {
       console.log("POLY SEARCH ...");
-      searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")"; //        let i,thisJSON;
-      //        for (i=0; i<locJSON.features.length; i++)
+      searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
+      var i, thisJSON;
+
+      for (i = 0; i < locJSON.features.length; i++) {
+        console.log(locJSON.features[i].id);
+        console.log(locJSON.features[i].geometry.coordinates);
+      }
     } else if (!isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ..."); // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
       // OverpassTurbo uses "around" function, but requires coords to be swapped.
@@ -19320,10 +19325,10 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
       OverpassTurboQuery += "(\n"; // Loop through each location, check to see if it's one that
       // OverpassTurbo doesn't recognise, and swap in one that it does.
 
-      var i, thisLocation;
+      var _i, thisLocation;
 
-      for (i = 0; i < locationSet.length; i++) {
-        thisLocation = locationSet[i]; // Check unsupported locations.
+      for (_i = 0; _i < locationSet.length; _i++) {
+        thisLocation = locationSet[_i]; // Check unsupported locations.
 
         if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
           thisLocation = "Wales";
@@ -19346,12 +19351,12 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   if (itemData.matchNames) {
     matchNames = itemData.matchNames;
 
-    var _i;
+    var _i2;
 
     OverpassTurboQuery += "  // matchNames search:\n";
 
-    for (_i = 0; _i < matchNames.length; _i++) {
-      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i] + "\"]" + searchArea + ";\n";
+    for (_i2 = 0; _i2 < matchNames.length; _i2++) {
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i2] + "\"]" + searchArea + ";\n";
     }
 
     OverpassTurboQuery += "\n";
