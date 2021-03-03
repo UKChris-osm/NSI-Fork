@@ -303,14 +303,15 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("k: " + k);
     console.log("v: " + v);
     console.log("== " + itemData.displayName);
-    console.log("locationset typeof: " + typeof locationSet);
+    console.log("locationSet typeof: " + typeof locationSet);
     console.log(locationSet);
-    console.log("locationset[0] typeof: " + typeof locationSet[0]);
+    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
     console.log(locationSet[0]);
     console.log("locJSON typeof: " + typeof locJSON);
     console.log(locJSON);
     console.log("locJSON.features typeof: " + typeof locJSON.features);
     console.log(locJSON.features);
+    console.log("locJSON.features.length: " + locJSON.features.length);
     console.log("locJSON.features[0] typeof: " + typeof locJSON.features[0]);
     console.log(locJSON.features[0]);
     console.log("locJSON.features[0].id typeof: " + typeof locJSON.features[0].id);
@@ -329,6 +330,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       if (locationSet[0].endsWith(".geojson")) {
         console.log("POLY SEARCH ...");
         searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
+
+//        let i,thisJSON;
+//        for (i=0; i<locJSON.features.length; i++)
+
       } else if (!isNaN(locationSet[0][0])) {
         console.log("RADIUS SEARCH ...");
 
