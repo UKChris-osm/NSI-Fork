@@ -19035,8 +19035,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-console.log("START...");
-
 function CategoryRow(props) {
   var features = props.data.features;
   var data = props.data;
@@ -19280,7 +19278,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n";
-  console.log("=================================================");
+  console.log("== START ===============================================");
   console.log("t: " + t);
   console.log("k: " + k);
   console.log("v: " + v);
@@ -19389,7 +19387,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   console.log("matchNames is a " + _typeof(matchNames) + ", with a length of " + matchNames.length + ", and contains ...");
   console.log(matchNames);
   console.log("locationSet is a " + _typeof(locationSet) + ", with a length of " + locationSet.length + ", and contains ...");
-  console.log(locationSet); //    console.log(JSON.stringify(itemData));
+  console.log(locationSet);
+  console.log("== FINISH ===============================================");
+  console.log(" "); //    console.log(JSON.stringify(itemData));
   //    console.log("Building Overpass Query...");
   //    console.log(OverpassTurboQuery);
   //  OverpassTurboQueryURI  = "https://overpass-turbo.eu/?Q="; // Base URL.

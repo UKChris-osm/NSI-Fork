@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import CategoryRowSocialLinks from './CategoryRowSocialLinks';
 
-console.log("START...");
 export default function CategoryRow(props) {
   const features = props.data.features;
   const data = props.data;
@@ -299,7 +298,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
-    console.log("=================================================");
+    console.log("== START ===============================================");
     console.log("t: " + t);
     console.log("k: " + k);
     console.log("v: " + v);
@@ -437,6 +436,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     console.log("locationSet is a " + typeof locationSet + ", with a length of " + locationSet.length + ", and contains ...");
     console.log(locationSet);
+    console.log("== FINISH ===============================================");
+    console.log(" ");
 
 //    console.log(JSON.stringify(itemData));
 //    console.log("Building Overpass Query...");
