@@ -30,7 +30,7 @@ export default function App() {
   const [icons, iconsLoading] = useTaginfo(TAGINFO);
 
   const appData = {
-    isLoading: () => (brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || featuresLoading || indexLoading || iconsLoading),
+    isLoading: () => (brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || indexLoading || iconsLoading),
     filters: filters,
     setFilters: setFilters,
     brandCounts: brandCounts,
@@ -38,8 +38,7 @@ export default function App() {
     transitCounts: transitCounts,
     index: index,
     icons: icons,
-    wikidata: wikidata.wikidata,
-    features: features
+    wikidata: wikidata.wikidata
   };
 
   return (

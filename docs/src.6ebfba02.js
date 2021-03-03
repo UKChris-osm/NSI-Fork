@@ -20128,7 +20128,7 @@ function App() {
 
   var appData = {
     isLoading: function isLoading() {
-      return brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || featuresLoading || indexLoading || iconsLoading;
+      return brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || indexLoading || iconsLoading;
     },
     filters: filters,
     setFilters: setFilters,
@@ -20137,8 +20137,7 @@ function App() {
     transitCounts: transitCounts,
     index: index,
     icons: icons,
-    wikidata: wikidata.wikidata,
-    features: features
+    wikidata: wikidata.wikidata
   };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",
