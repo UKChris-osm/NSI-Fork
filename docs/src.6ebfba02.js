@@ -19044,6 +19044,7 @@ function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
+  console.log(features);
   var item = props.item;
   var t = props.t;
   var k = props.k;
