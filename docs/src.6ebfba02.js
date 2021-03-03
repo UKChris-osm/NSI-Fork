@@ -20108,6 +20108,11 @@ function App() {
       wikidata = _useFetch8[0],
       wikidataLoading = _useFetch8[1];
 
+  var _useFetch9 = useFetch(FEATURES),
+      _useFetch10 = _slicedToArray(_useFetch9, 2),
+      features = _useFetch10[0],
+      featuresLoading = _useFetch10[1];
+
   var _useIndex = useIndex(INDEX),
       _useIndex2 = _slicedToArray(_useIndex, 2),
       index = _useIndex2[0],
@@ -20120,7 +20125,7 @@ function App() {
 
   var appData = {
     isLoading: function isLoading() {
-      return brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || indexLoading || iconsLoading;
+      return brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || featuresLoading || indexLoading || iconsLoading;
     },
     filters: filters,
     setFilters: setFilters,
@@ -20129,7 +20134,8 @@ function App() {
     transitCounts: transitCounts,
     index: index,
     icons: icons,
-    wikidata: wikidata.wikidata
+    wikidata: wikidata.wikidata,
+    features: features
   };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",

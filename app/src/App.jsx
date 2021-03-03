@@ -25,11 +25,12 @@ export default function App() {
   const [operatorCounts, operatorCountsLoading] = useFetch(OPERATORS_KEEP);
   const [transitCounts, transitCountsLoading] = useFetch(TRANSIT_KEEP);
   const [wikidata, wikidataLoading] = useFetch(WIKIDATA);
+  const [features, featuresLoading] = useFetch(FEATURES);
   const [index, indexLoading] = useIndex(INDEX);
   const [icons, iconsLoading] = useTaginfo(TAGINFO);
 
   const appData = {
-    isLoading: () => (brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || indexLoading || iconsLoading),
+    isLoading: () => (brandCountsLoading || operatorCountsLoading || transitCountsLoading || wikidataLoading || featuresLoading || indexLoading || iconsLoading),
     filters: filters,
     setFilters: setFilters,
     brandCounts: brandCounts,
@@ -37,7 +38,8 @@ export default function App() {
     transitCounts: transitCounts,
     index: index,
     icons: icons,
-    wikidata: wikidata.wikidata
+    wikidata: wikidata.wikidata,
+    features: features
   };
 
   return (
