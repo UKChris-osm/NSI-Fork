@@ -14,8 +14,8 @@ export default function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
-  console.log("features ");
-  console.log(features);
+  console.log("fetures ");
+  console.log(fetures);
 
   const item = props.item;
   const t = props.t;
@@ -190,7 +190,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         { wdLink(qid) }
         { siteLink(identities.website) }
         <CategoryRowSocialLinks {...identities} />
-        { buildOverpassTurbo(item,t,k,v) }
+        { buildOverpassTurbo(item,locJSON,t,k,v) }
       </td>
       <td className='logo'>{ logo(logos.wikidata) }</td>
       <td className='logo'>{ fblogo(identities.facebook, logos.facebook) }</td>
@@ -284,8 +284,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
 };
 
-  function buildOverpassTurbo(itemData,t,k,v) {
+  function buildOverpassTurbo(itemData,features,t,k,v) {
     let locationSet           = itemData.locationSet.include; // locationSet data should always exist as an array.
+    let locJSON               = features;
     let matchNames            = "";
     let name                  = "";
     let brand                 = "";
@@ -302,6 +303,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(locationSet);
     console.log("locationset[0] typeof: " + typeof locationSet[0]);
     console.log(locationSet[0]);
+    console.log("locJSON typeof: " + typeof locJSON);
+    console.log(locJSON);
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.

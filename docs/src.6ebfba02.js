@@ -19045,8 +19045,8 @@ function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
-  console.log("features ");
-  console.log(features);
+  console.log("fetures ");
+  console.log(fetures);
   var item = props.item;
   var t = props.t;
   var k = props.k;
@@ -19152,7 +19152,7 @@ function CategoryRow(props) {
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
     }), /*#__PURE__*/_react.default.createElement("hr", null)), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
-    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item, t, k, v)), /*#__PURE__*/_react.default.createElement("td", {
+    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item, locJSON, t, k, v)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
     }, logo(logos.wikidata)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
@@ -19262,9 +19262,10 @@ function CategoryRow(props) {
 
 ;
 
-function buildOverpassTurbo(itemData, t, k, v) {
+function buildOverpassTurbo(itemData, features, t, k, v) {
   var locationSet = itemData.locationSet.include; // locationSet data should always exist as an array.
 
+  var locJSON = features;
   var matchNames = "";
   var name = "";
   var brand = "";
@@ -19281,7 +19282,9 @@ function buildOverpassTurbo(itemData, t, k, v) {
   console.log("locationset typeof: " + _typeof(locationSet));
   console.log(locationSet);
   console.log("locationset[0] typeof: " + _typeof(locationSet[0]));
-  console.log(locationSet[0]); // Build a basic location search if locationSet isn't set to world (001)
+  console.log(locationSet[0]);
+  console.log("locJSON typeof: " + _typeof(locJSON));
+  console.log(locJSON); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
 
   if (locationSet[0] != "001") {
