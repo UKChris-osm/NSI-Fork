@@ -15,6 +15,7 @@ export default function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
+  console.log("features ");
   console.log(features);
 
   const item = props.item;
