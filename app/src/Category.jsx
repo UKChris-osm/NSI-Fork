@@ -114,7 +114,7 @@ export default function Category(props) {
     }
 
     return (
-      <CategoryRow key={item.id} {...props} item={item} />
+      <CategoryRow key={item.id} {...props}{...features} item={item} />
     );
   });
 
