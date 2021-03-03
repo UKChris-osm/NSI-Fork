@@ -19254,7 +19254,7 @@ function CategoryRow(props) {
 ;
 
 function buildOverpassTurbo(primaryData, itemData, k, v) {
-  var locationSet = itemData.locationSet.include; // locationSet data should always exist.
+  var locationSet = itemData.locationSet.include; // locationSet data should always exist as an array.
 
   var matchNames = "";
   var name = "";
@@ -19269,10 +19269,12 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var OverpassTurboQuery = "[out:json][timeout:100];\n";
   console.log("=================================================");
   console.log("== " + itemData.displayName);
-  console.log(_typeof(locationSet)); // Build a basic location search if locationSet isn't set to world (001)
+  console.log(_typeof(locationSet));
+  console.log(locationSet);
+  console.log(locationSet[0]); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
 
-  if (locationSet != "001") {
+  if (locationSet[0] != "001") {
     if (locationSet[0] instanceof String && locationSet[0].endsWith(".geojson")) {
       console.log("POLY SEARCH ...");
       searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";

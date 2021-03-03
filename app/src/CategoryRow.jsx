@@ -288,11 +288,13 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     console.log("=================================================");
     console.log("== " + itemData.displayName);
-    console.log(typeof locationSet)
+    console.log(typeof locationSet);
+    console.log(locationSet);
+    console.log(locationSet[0]);
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
-    if (locationSet != "001") {
+    if (locationSet[0] != "001") {
 
       if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
         console.log("POLY SEARCH ...");
