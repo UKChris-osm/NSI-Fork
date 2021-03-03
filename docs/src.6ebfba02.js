@@ -19046,7 +19046,7 @@ function CategoryRow(props) {
   console.log("props.item: ");
   console.log(props.item);
   console.log("fetures ");
-  console.log(fetures);
+  console.log(features);
   var item = props.item;
   var t = props.t;
   var k = props.k;
@@ -19152,7 +19152,7 @@ function CategoryRow(props) {
       dangerouslySetInnerHTML: highlight(tt, displayTags(tags))
     }), /*#__PURE__*/_react.default.createElement("hr", null)), /*#__PURE__*/_react.default.createElement("td", {
       className: "wikidata"
-    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item, locJSON, t, k, v)), /*#__PURE__*/_react.default.createElement("td", {
+    }, /*#__PURE__*/_react.default.createElement("h3", null, label), /*#__PURE__*/_react.default.createElement("span", null, description), /*#__PURE__*/_react.default.createElement("br", null), wdLink(qid), siteLink(identities.website), /*#__PURE__*/_react.default.createElement(_CategoryRowSocialLinks.default, identities), buildOverpassTurbo(item, features, t, k, v)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"
     }, logo(logos.wikidata)), /*#__PURE__*/_react.default.createElement("td", {
       className: "logo"

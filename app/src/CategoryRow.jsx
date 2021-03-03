@@ -15,7 +15,7 @@ export default function CategoryRow(props) {
   console.log("props.item: ");
   console.log(props.item);
   console.log("fetures ");
-  console.log(fetures);
+  console.log(features);
 
   const item = props.item;
   const t = props.t;
@@ -190,7 +190,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         { wdLink(qid) }
         { siteLink(identities.website) }
         <CategoryRowSocialLinks {...identities} />
-        { buildOverpassTurbo(item,locJSON,t,k,v) }
+        { buildOverpassTurbo(item,features,t,k,v) }
       </td>
       <td className='logo'>{ logo(logos.wikidata) }</td>
       <td className='logo'>{ fblogo(identities.facebook, logos.facebook) }</td>
