@@ -288,8 +288,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     console.log("=================================================");
     console.log("== " + itemData.displayName);
-    console.log(typeof locationSet);
+    console.log("locationset typeof: " + typeof locationSet);
     console.log(locationSet);
+    console.log("locationset[0] typeof: " + typeof locationSet[0]);
     console.log(locationSet[0]);
 
     // Build a basic location search if locationSet isn't set to world (001)
