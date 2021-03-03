@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CategoryRowSocialLinks from './CategoryRowSocialLinks';
 
 export default function CategoryRow(props) {
-  let features;
+  const features = props.data.features;
   const data = props.data;
   if (data.isLoading()) return;
 
