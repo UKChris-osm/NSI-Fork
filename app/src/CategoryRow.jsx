@@ -291,6 +291,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let name                  = "";
     let brand                 = "";
     let brandWikidata         = "";
+    let operator              = "";
     let styling               = "";
     let searchArea            = ""; // Should remain blank unless searchArea is being used.
     let radius                = "25000"; // 25km radius, same as location-conflation radius.
@@ -379,6 +380,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     else
 	name = "none set";
 
+    if (itemData.tags.operator)
+	operator = itemData.tags.operator;
+    else
+	operator = "none set";
+
     if (itemData.tags.brand)
 	brand = itemData.tags.brand;
     else
@@ -394,6 +400,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
     if (brand != "none set")
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
+    if (operator != "none set")
+      OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + ";\n";
 
     OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
 

@@ -19270,6 +19270,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   var name = "";
   var brand = "";
   var brandWikidata = "";
+  var operator = "";
   var styling = "";
   var searchArea = ""; // Should remain blank unless searchArea is being used.
 
@@ -19352,10 +19353,12 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   }
 
   if (itemData.tags.name) name = itemData.tags.name;else name = "none set";
+  if (itemData.tags.operator) operator = itemData.tags.operator;else operator = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
   if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
   if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
+  if (operator != "none set") OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + ";\n";
   OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node,way,relation\n";
