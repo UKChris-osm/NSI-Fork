@@ -14,7 +14,7 @@ export default function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
-  console.log("fetures ");
+  console.log("features ");
   console.log(features);
 
   const item = props.item;
@@ -305,6 +305,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log(locationSet[0]);
     console.log("locJSON typeof: " + typeof locJSON);
     console.log(locJSON);
+    console.log("locJSON typeof: " + typeof locJSON[0]);
+    console.log(locJSON[0]);
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.

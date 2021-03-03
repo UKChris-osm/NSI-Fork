@@ -19045,7 +19045,7 @@ function CategoryRow(props) {
   console.log(props.data);
   console.log("props.item: ");
   console.log(props.item);
-  console.log("fetures ");
+  console.log("features ");
   console.log(features);
   var item = props.item;
   var t = props.t;
@@ -19284,7 +19284,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   console.log("locationset[0] typeof: " + _typeof(locationSet[0]));
   console.log(locationSet[0]);
   console.log("locJSON typeof: " + _typeof(locJSON));
-  console.log(locJSON); // Build a basic location search if locationSet isn't set to world (001)
+  console.log(locJSON);
+  console.log("locJSON typeof: " + _typeof(locJSON[0]));
+  console.log(locJSON[0]); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
 
   if (locationSet[0] != "001") {
