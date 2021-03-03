@@ -312,8 +312,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     console.log("locJSON.features[0].id typeof: " + typeof locJSON.features[0].id);
     console.log(locJSON.features[0].id);
     console.log("locJSON.features[0].geometry typeof: " + typeof locJSON.features[0].geometry);
-    console.log(locJSON.features[0].geometry.coordinates);
-    console.log("locJSON.features[0].geometry typeof: " + typeof locJSON.features[0].geometry.coordinates);
+    console.log(locJSON.features[0].geometry);
+    console.log("locJSON.features[0].geometry.coordinates typeof: " + typeof locJSON.features[0].geometry.coordinates);
     console.log(locJSON.features[0].geometry.coordinates);
 
     // Build a basic location search if locationSet isn't set to world (001)
