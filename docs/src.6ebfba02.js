@@ -19268,9 +19268,9 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n";
   console.log("=================================================");
-  console.log("== " + itemData.displayName); // Build a basic location search if locationSet isn't set to world (001)
+  console.log("== " + itemData.displayName);
+  console.log(_typeof(locationSet)); // Build a basic location search if locationSet isn't set to world (001)
   // or doesn't include a custom .geojson file.
-  //    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
 
   if (locationSet != "001") {
     if (locationSet.endsWith(".geojson")) {
@@ -19302,7 +19302,7 @@ function buildOverpassTurbo(primaryData, itemData, k, v) {
         OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
       }
 
-      OverpassTurboQuery += ")->.searchArea;\n"; //      OverpassTurboQuery += locationSet + ";\n";
+      OverpassTurboQuery += ")->.searchArea;\n";
     }
   }
 

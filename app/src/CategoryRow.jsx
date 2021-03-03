@@ -288,11 +288,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     console.log("=================================================");
     console.log("== " + itemData.displayName);
+    console.log(typeof locationSet)
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
-//    if ((locationSet != "001") || (!(locationSet.includes(".geojson")))) {
     if (locationSet != "001") {
+
       if (locationSet.endsWith(".geojson")) {
         console.log("POLY SEARCH ...");
         searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
@@ -303,31 +304,29 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
         // OverpassTurbo uses "around" function, but requires coords to be swapped.
         searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ")";
       } else {
-      console.log("AREA SEARCH ...");
-      searchArea = "(area.searchArea)";
-      OverpassTurboQuery += "(\n";
+        console.log("AREA SEARCH ...");
+        searchArea = "(area.searchArea)";
+        OverpassTurboQuery += "(\n";
 
-      // Loop through each location, check to see if it's one that
-      // OverpassTurbo doesn't recognise, and swap in one that it does.
-      let i,thisLocation;
-      for (i=0; i<locationSet.length; i++) {
-	thisLocation = locationSet[i];
+        // Loop through each location, check to see if it's one that
+        // OverpassTurbo doesn't recognise, and swap in one that it does.
+        let i,thisLocation;
+        for (i=0; i<locationSet.length; i++) {
+          thisLocation = locationSet[i];
 
-        // Check unsupported locations.
-        if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
-	  thisLocation = "Wales";
-        if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
-	  thisLocation = "Scotland";
-        if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
-	  thisLocation = "Northern Ireland";
+          // Check unsupported locations.
+          if (thisLocation == "gb-wls") // change 'gb-wls' to 'Wales'.
+            thisLocation = "Wales";
+          if (thisLocation == "gb-sct") // change 'gb-sct' to 'Scotland'.
+            thisLocation = "Scotland";
+          if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
+            thisLocation = "Northern Ireland";
 
-        // Add 'geocodeArea' for this location
-        OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
+          // Add 'geocodeArea' for this location
+          OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
+        }
+        OverpassTurboQuery += ")->.searchArea;\n";
       }
-
-      OverpassTurboQuery += ")->.searchArea;\n";
-//      OverpassTurboQuery += locationSet + ";\n";
-}
     }
 
 
