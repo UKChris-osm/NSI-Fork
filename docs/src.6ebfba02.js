@@ -19303,11 +19303,11 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   // or doesn't include a custom .geojson file.
 
   if (locationSet[0] != "001") {
-    console.log("locationSet isn't 001 and so isn't global."); //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
+    console.log("locationSet isn't 001 and so isn't global.");
 
-    if (locationSet[0].endsWith(".geojson")) {
-      console.log("POLY SEARCH ..."); //        searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
-
+    if (locationSet[0] instanceof String && locationSet[0].endsWith(".geojson")) {
+      //      if (locationSet[0].endsWith(".geojson")) {
+      console.log("POLY SEARCH ...");
       var i, ii, thisJSON;
 
       for (i = 0; i < locJSON.features.length; i++) {
