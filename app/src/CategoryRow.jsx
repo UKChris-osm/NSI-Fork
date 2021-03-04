@@ -302,7 +302,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //    console.log("t: " + t);
 //    console.log("k: " + k);
 //    console.log("v: " + v);
-    console.log("== " + itemData.displayName);
+    console.log("== %c" + itemData.displayName,"color:red;");
 //    console.log("locationSet typeof: " + typeof locationSet);
 //    console.log(locationSet);
 //    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
