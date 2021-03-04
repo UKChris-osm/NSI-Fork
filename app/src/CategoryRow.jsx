@@ -8,14 +8,14 @@ export default function CategoryRow(props) {
   const data = props.data;
   if (data.isLoading()) return;
 
-  console.log("props: ");
-  console.log(props);
-  console.log("props.data: ");
-  console.log(props.data);
-  console.log("props.item: ");
-  console.log(props.item);
-  console.log("features ");
-  console.log(features);
+//  console.log("props: ");
+//  console.log(props);
+//  console.log("props.data: ");
+//  console.log(props.data);
+//  console.log("props.item: ");
+//  console.log(props.item);
+//  console.log("features ");
+//  console.log(features);
 
   const item = props.item;
   const t = props.t;
@@ -336,7 +336,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //          console.log(locJSON.features[i].id)
 //          console.log(locJSON.features[i].geometry.coordinates)
           if (locationSet[0] == locJSON.features[i].id) {
-            searchArea = "(poly:\"locJSON.features[i].geometry.coordinates\")";
+            searchArea = "(poly:\"" + locJSON.features[i].geometry.coordinates + "\")";
             console.log(locationSet[0] + " matches " + locJSON.features[i].id);
             console.log(searchArea);
           }

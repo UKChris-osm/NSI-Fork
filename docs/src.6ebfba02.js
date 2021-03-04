@@ -19038,15 +19038,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 function CategoryRow(props) {
   var features = props.data.features;
   var data = props.data;
-  if (data.isLoading()) return;
-  console.log("props: ");
-  console.log(props);
-  console.log("props.data: ");
-  console.log(props.data);
-  console.log("props.item: ");
-  console.log(props.item);
-  console.log("features ");
-  console.log(features);
+  if (data.isLoading()) return; //  console.log("props: ");
+  //  console.log(props);
+  //  console.log("props.data: ");
+  //  console.log(props.data);
+  //  console.log("props.item: ");
+  //  console.log(props.item);
+  //  console.log("features ");
+  //  console.log(features);
+
   var item = props.item;
   var t = props.t;
   var k = props.k;
@@ -19314,7 +19314,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
         //          console.log(locJSON.features[i].id)
         //          console.log(locJSON.features[i].geometry.coordinates)
         if (locationSet[0] == locJSON.features[i].id) {
-          searchArea = "(poly:\"locJSON.features[i].geometry.coordinates\")";
+          searchArea = "(poly:\"" + locJSON.features[i].geometry.coordinates + "\")";
           console.log(locationSet[0] + " matches " + locJSON.features[i].id);
           console.log(searchArea);
         }
