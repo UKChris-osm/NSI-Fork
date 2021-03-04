@@ -19336,7 +19336,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
             }
           }
 
-          searchArea += "\")\n  /* Search area using: " + locationSet[0] + " */\n";
+          searchArea += "\");\n  /* Search area using: " + locationSet[0] + " */\n";
           console.log(searchArea);
         }
       }
@@ -19344,7 +19344,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
       console.log("RADIUS SEARCH ..."); // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
       // OverpassTurbo uses "around" function, but requires coords to be swapped.
 
-      searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ")";
+      searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ");";
     } else {
       console.log("AREA SEARCH ...");
       searchArea = "(area.searchArea)";
@@ -19382,7 +19382,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
     OverpassTurboQuery += "  // matchNames search:\n";
 
     for (_i2 = 0; _i2 < matchNames.length; _i2++) {
-      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i2] + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[_i2] + "\"]" + searchArea + "\n";
     }
 
     OverpassTurboQuery += "\n";
@@ -19392,9 +19392,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   if (itemData.tags.operator) operator = itemData.tags.operator;else operator = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
-  if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
-  if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
-  if (operator != "none set") OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + ";\n";
+  if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
+  if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
+  if (operator != "none set") OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
   OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node,way,relation\n";

@@ -355,7 +355,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
                 console.log("Added End blank.");
               }
             }
-            searchArea += "\")\n  /* Search area using: " + locationSet[0] + " */\n";
+            searchArea += "\");\n  /* Search area using: " + locationSet[0] + " */\n";
             console.log(searchArea);
           }
         }
@@ -364,7 +364,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
         // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
         // OverpassTurbo uses "around" function, but requires coords to be swapped.
-        searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ")";
+        searchArea = "(around:" + radius + "," + locationSet[0][1] + "," + locationSet[0][0] + ");";
       } else {
         console.log("AREA SEARCH ...");
         searchArea = "(area.searchArea)";
@@ -404,7 +404,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
       OverpassTurboQuery += "  // matchNames search:\n";
       for (i=0; i<matchNames.length; i++)
-        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + ";\n";
+        OverpassTurboQuery += "  nwr[\"name\"=\"" + matchNames[i] + "\"]" + searchArea + "\n";
       OverpassTurboQuery += "\n";
     }
 
@@ -430,11 +430,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
 
     if (name != "none set")
-      OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
     if (brand != "none set")
-      OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
     if (operator != "none set")
-      OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + ";\n";
+      OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
 
     OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
 
