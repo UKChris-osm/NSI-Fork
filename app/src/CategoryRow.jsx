@@ -339,6 +339,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
           console.log(" ");
 
           if (locationSet[0] == locJSON.features[i].id) {
+            console.log(locationSet[0] + " matches " + locJSON.features[i].id + " so look through coords.");
+            console.log(locJSON.features[i].geometry.coordinates.length);
+            console.log(locJSON.features[i].geometry.coordinates[0].length);
             searchArea  = "(poly:\"";
             for (ii=0; ii<locJSON.features[i].geometry.coordinates[0].length; ii++) {
               console.log(i);
@@ -348,9 +351,6 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
               searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
             }
             searchArea += "\")";
-            console.log(locationSet[0] + " matches " + locJSON.features[i].id);
-            console.log(locJSON.features[i].geometry.coordinates.length);
-            console.log(locJSON.features[i].geometry.coordinates[0].length);
             console.log(searchArea);
           }
         }
