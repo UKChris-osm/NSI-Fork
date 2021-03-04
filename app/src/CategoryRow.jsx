@@ -343,7 +343,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
             console.log(locJSON.features[i].geometry.coordinates.length);
             console.log(locJSON.features[i].geometry.coordinates[0].length);
             searchArea  = "(poly:\"";
-            for (ii=0; ii<locJSON.features[i].geometry.coordinates[0].length; ii++) {
+            for (ii=0; (ii<locJSON.features[i].geometry.coordinates[0].length-1); ii++) {
               console.log("inside ii loop, main i is: " + i);
               console.log("ii: " + ii);
               searchArea += locJSON.features[i].geometry.coordinates[0][ii][1];
