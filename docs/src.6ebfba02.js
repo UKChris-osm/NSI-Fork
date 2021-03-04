@@ -19282,7 +19282,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   //    console.log("k: " + k);
   //    console.log("v: " + v);
 
-  console.log("== " + itemData.displayName); //    console.log("locationSet typeof: " + typeof locationSet);
+  console.log("== %c" + itemData.displayName, "color:red;"); //    console.log("locationSet typeof: " + typeof locationSet);
   //    console.log(locationSet);
   //    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
   //    console.log(locationSet[0]);
