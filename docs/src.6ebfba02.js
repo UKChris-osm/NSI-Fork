@@ -19307,8 +19307,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   if (locationSet[0] != "001") {
     console.log("locationSet isn't 001 and so isn't global.");
     console.log("locationSet[0]: " + locationSet[0] + " (" + _typeof(locationSet[0]) + ")"); //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
+    //      if (locationSet[0].endsWith(".geojson")) {
 
-    if (locationSet[0].endsWith(".geojson")) {
+    if (String.prototype.endsWith && locationSet[0].endsWith(".geojson")) {
       console.log("%cPOLY SEARCH ...", "color:red;");
       console.log(locationSet[0] + " (" + _typeof(locationSet[0]) + ")");
       var i, ii, thisJSON;
