@@ -19311,8 +19311,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
       var i, thisJSON;
 
       for (i = 0; i < locJSON.features.length; i++) {
-        console.log(locJSON.features[i].id);
-        console.log(locJSON.features[i].geometry.coordinates);
+        //          console.log(locJSON.features[i].id)
+        //          console.log(locJSON.features[i].geometry.coordinates)
+        if (locationSet[0] == locJSON.features[i].id) console.log(locationSet[0] + " matches " + locJSON.features[i].id);
       }
     } else if (!isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ..."); // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
