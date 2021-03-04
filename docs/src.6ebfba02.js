@@ -19320,22 +19320,22 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
         //          console.log(" ");
 
         if (locationSet[0] == locJSON.features[i].id) {
-          console.log(locationSet[0] + " matches " + locJSON.features[i].id + " so look through coords.");
-          console.log(locJSON.features[i].geometry.coordinates.length);
-          console.log(locJSON.features[i].geometry.coordinates[0].length);
+          console.log("  " + locationSet[0] + " matches " + locJSON.features[i].id + " so look through coords.");
+          console.log("  coord sets: " + locJSON.features[i].geometry.coordinates.length);
+          console.log("  coord pairs: " + locJSON.features[i].geometry.coordinates[0].length);
           searchArea = "(poly:\"";
+          console.log("  inside ii loop, main i is: " + i);
 
           for (ii = 0; ii < locJSON.features[i].geometry.coordinates[0].length - 1; ii++) {
-            console.log("inside ii loop, main i is: " + i);
-            console.log("ii: " + ii);
+            console.log("    ii: " + ii);
             searchArea += locJSON.features[i].geometry.coordinates[0][ii][1];
             searchArea += " ";
             searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
-            console.log(searchArea);
+            console.log("    " + searchArea);
 
             if (ii < locJSON.features[i].geometry.coordinates[0].length - 2) {
               searchArea += " ";
-              console.log("Added End blank.");
+              console.log("    Added End blank.");
             }
           }
 
