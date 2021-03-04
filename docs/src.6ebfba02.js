@@ -19281,8 +19281,8 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   console.log("== START ==============================================="); //    console.log("t: " + t);
   //    console.log("k: " + k);
   //    console.log("v: " + v);
-  //    console.log("== " + itemData.displayName);
-  //    console.log("locationSet typeof: " + typeof locationSet);
+
+  console.log("== " + itemData.displayName); //    console.log("locationSet typeof: " + typeof locationSet);
   //    console.log(locationSet);
   //    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
   //    console.log(locationSet[0]);
@@ -19303,11 +19303,11 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   // or doesn't include a custom .geojson file.
 
   if (locationSet[0] != "001") {
-    console.log("locationSet isn't 001 and so isn't global.");
+    console.log("locationSet isn't 001 and so isn't global."); //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
 
-    if (locationSet[0] instanceof String && locationSet[0].endsWith(".geojson")) {
-      //      if (locationSet[0].endsWith(".geojson")) {
+    if (locationSet[0].endsWith(".geojson")) {
       console.log("POLY SEARCH ...");
+      console.log(locationSet[0] + "(" + _typeof(locationSet[0]) + ")");
       var i, ii, thisJSON;
 
       for (i = 0; i < locJSON.features.length; i++) {
