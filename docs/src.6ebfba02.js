@@ -19307,14 +19307,14 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
     if (locationSet[0].endsWith(".geojson")) {
       console.log("POLY SEARCH ...");
-      console.log(locationSet[0] + "(" + _typeof(locationSet[0]) + ")");
+      console.log(locationSet[0] + " (" + _typeof(locationSet[0]) + ")");
       var i, ii, thisJSON;
 
       for (i = 0; i < locJSON.features.length; i++) {
-        console.log(i);
-        console.log(locJSON.features[i].id);
-        console.log(locJSON.features[i].geometry.coordinates);
-        console.log(" ");
+        //          console.log(i);
+        //          console.log(locJSON.features[i].id);
+        console.log("i: " + i + ", ID: " + locJSON.features[i].id); //          console.log(locJSON.features[i].geometry.coordinates);
+        //          console.log(" ");
 
         if (locationSet[0] == locJSON.features[i].id) {
           console.log(locationSet[0] + " matches " + locJSON.features[i].id + " so look through coords.");
