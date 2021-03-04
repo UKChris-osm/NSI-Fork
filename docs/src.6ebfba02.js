@@ -19340,7 +19340,8 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
           }
 
           searchArea += "\");\n  /* Search area using: " + locationSet[0] + " */\n";
-          console.log(searchArea);
+          console.log("");
+          console.log("    Final Poly search query: " + searchArea);
         }
       }
     } else if (!isNaN(locationSet[0][0])) {
