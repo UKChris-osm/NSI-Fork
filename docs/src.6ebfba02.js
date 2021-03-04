@@ -19330,6 +19330,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
           searchArea += "\")";
           console.log(locationSet[0] + " matches " + locJSON.features[i].id);
           console.log(locJSON.features[i].geometry.coordinates.length);
+          console.log(locJSON.features[i].geometry.coordinates[0].length);
           console.log(searchArea);
         }
       }
