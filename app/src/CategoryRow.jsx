@@ -299,27 +299,27 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
     console.log("== START ===============================================");
-    console.log("t: " + t);
-    console.log("k: " + k);
-    console.log("v: " + v);
-    console.log("== " + itemData.displayName);
-    console.log("locationSet typeof: " + typeof locationSet);
-    console.log(locationSet);
-    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
-    console.log(locationSet[0]);
-    console.log("locJSON typeof: " + typeof locJSON);
-    console.log(locJSON);
-    console.log("locJSON.features typeof: " + typeof locJSON.features);
-    console.log(locJSON.features);
-    console.log("locJSON.features.length: " + locJSON.features.length);
-    console.log("locJSON.features[0] typeof: " + typeof locJSON.features[0]);
-    console.log(locJSON.features[0]);
-    console.log("locJSON.features[0].id typeof: " + typeof locJSON.features[0].id);
-    console.log(locJSON.features[0].id);
-    console.log("locJSON.features[0].geometry typeof: " + typeof locJSON.features[0].geometry);
-    console.log(locJSON.features[0].geometry);
-    console.log("locJSON.features[0].geometry.coordinates typeof: " + typeof locJSON.features[0].geometry.coordinates);
-    console.log(locJSON.features[0].geometry.coordinates);
+//    console.log("t: " + t);
+//    console.log("k: " + k);
+//    console.log("v: " + v);
+//    console.log("== " + itemData.displayName);
+//    console.log("locationSet typeof: " + typeof locationSet);
+//    console.log(locationSet);
+//    console.log("locationSet[0] typeof: " + typeof locationSet[0]);
+//    console.log(locationSet[0]);
+//    console.log("locJSON typeof: " + typeof locJSON);
+//    console.log(locJSON);
+//    console.log("locJSON.features typeof: " + typeof locJSON.features);
+//    console.log(locJSON.features);
+//    console.log("locJSON.features.length: " + locJSON.features.length);
+//    console.log("locJSON.features[0] typeof: " + typeof locJSON.features[0]);
+//    console.log(locJSON.features[0]);
+//    console.log("locJSON.features[0].id typeof: " + typeof locJSON.features[0].id);
+//    console.log(locJSON.features[0].id);
+//    console.log("locJSON.features[0].geometry typeof: " + typeof locJSON.features[0].geometry);
+//    console.log(locJSON.features[0].geometry);
+//    console.log("locJSON.features[0].geometry.coordinates typeof: " + typeof locJSON.features[0].geometry.coordinates);
+//    console.log(locJSON.features[0].geometry.coordinates);
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
