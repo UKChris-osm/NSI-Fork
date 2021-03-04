@@ -350,7 +350,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
               searchArea += " ";
               searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
               console.log(searchArea);
-              if (ii<(locJSON.features[i].geometry.coordinates[0].length - 1)) {
+              if (ii<(locJSON.features[i].geometry.coordinates[0].length - 2)) {
                 searchArea += " ";
                 console.log("Added End blank.");
               }
