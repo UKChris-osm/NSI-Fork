@@ -340,12 +340,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
           if (locationSet[0] == locJSON.features[i].id) {
             searchArea  = "(poly:\"";
-            for (ii=0; ii<locJSON.features[i].geometry.coordinates.length; ii++) {
+            for (ii=0; ii<locJSON.features[i].geometry.coordinates[0].length; ii++) {
               console.log(i);
               console.log(ii);
-              searchArea += locJSON.features[i].geometry.coordinates[ii][1];
+              searchArea += locJSON.features[i].geometry.coordinates[0][ii][1];
               searchArea += " ";
-              searchArea += locJSON.features[i].geometry.coordinates[ii][0];
+              searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
             }
             searchArea += "\")";
             console.log(locationSet[0] + " matches " + locJSON.features[i].id);
