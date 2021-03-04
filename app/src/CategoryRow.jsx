@@ -333,10 +333,14 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
         let i,thisJSON;
         for (i=0; i<locJSON.features.length; i++) {
-//          console.log(locJSON.features[i].id)
-//          console.log(locJSON.features[i].geometry.coordinates)
+          console.log(locJSON.features[i].id)
+          console.log(locJSON.features[i].geometry.coordinates)
+          console.log(" ");
+
           if (locationSet[0] == locJSON.features[i].id) {
-            searchArea = "(poly:\"" + locJSON.features[i].geometry.coordinates + "\")";
+            searchArea  = "(poly:\"";
+            searchArea += locJSON.features[i].geometry.coordinates;
+            searchArea += "\")";
             console.log(locationSet[0] + " matches " + locJSON.features[i].id);
             console.log(searchArea);
           }
