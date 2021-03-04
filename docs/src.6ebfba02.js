@@ -19328,7 +19328,12 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
             searchArea += locJSON.features[i].geometry.coordinates[0][ii][1];
             searchArea += " ";
             searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
-            if (ii < locJSON.features[i].geometry.coordinates[0].length) searchArea += " ";
+            console.log(searchArea);
+
+            if (ii < locJSON.features[i].geometry.coordinates[0].length) {
+              searchArea += " ";
+              console.log("Added End blank.");
+            }
           }
 
           searchArea += "\")";
