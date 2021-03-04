@@ -19336,7 +19336,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
             }
           }
 
-          searchArea += "\")\n  /* Search area using: " + locationSet[0] + " */\n";
+          searchArea += "\");\n  /* Search area using: " + locationSet[0] + " */\n";
           console.log(searchArea);
         }
       }

@@ -355,7 +355,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
                 console.log("Added End blank.");
               }
             }
-            searchArea += "\")\n  /* Search area using: " + locationSet[0] + " */\n";
+            searchArea += "\");\n  /* Search area using: " + locationSet[0] + " */\n";
             console.log(searchArea);
           }
         }
