@@ -329,7 +329,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       console.log(locationSet[0] + " (" + typeof locationSet[0] + ")");
 //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
       if (locationSet[0].endsWith(".geojson")) {
-        console.log("POLY SEARCH ...");
+        console.log("%cPOLY SEARCH ...","color:red;");
       console.log(locationSet[0] + " (" + typeof locationSet[0] + ")");
 
         let i,ii,thisJSON;
