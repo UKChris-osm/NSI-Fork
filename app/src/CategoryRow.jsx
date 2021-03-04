@@ -299,7 +299,6 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
     console.log("== START ===============================================");
-    console.log(FEATURES);
 //    console.log("t: " + t);
 //    console.log("k: " + k);
 //    console.log("v: " + v);
