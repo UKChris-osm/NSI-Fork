@@ -349,7 +349,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
               searchArea += locJSON.features[i].geometry.coordinates[0][ii][1];
               searchArea += " ";
               searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
-              searchArea += " ";
+              if (ii<locJSON.features[i].geometry.coordinates[0].length)
+                searchArea += " ";
             }
             searchArea += "\")";
             console.log(searchArea);
