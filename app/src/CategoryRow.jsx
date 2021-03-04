@@ -323,10 +323,10 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
-      console.log(locationSet[0] + " (" + typeof locationSet[0] + ")");
+      console.log("locationSet[0]:" + locationSet[0] + " (" + typeof locationSet[0] + ")");
     if (locationSet[0] != "001") {
       console.log("locationSet isn't 001 and so isn't global.");
-      console.log(locationSet[0] + " (" + typeof locationSet[0] + ")");
+      console.log("locationSet[0]:" + locationSet[0] + " (" + typeof locationSet[0] + ")");
 //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
       if (locationSet[0].endsWith(".geojson")) {
         console.log("%cPOLY SEARCH ...","color:red;");
