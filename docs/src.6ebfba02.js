@@ -19330,7 +19330,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
             searchArea += locJSON.features[i].geometry.coordinates[0][ii][0];
             console.log(searchArea);
 
-            if (ii < locJSON.features[i].geometry.coordinates[0].length) {
+            if (ii < locJSON.features[i].geometry.coordinates[0].length - 1) {
               searchArea += " ";
               console.log("Added End blank.");
             }
