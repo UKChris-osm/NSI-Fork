@@ -19306,14 +19306,18 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
     console.log("locationSet isn't 001 and so isn't global."); //      if ((locationSet[0] instanceof String) && (locationSet[0].endsWith(".geojson"))) {
 
     if (locationSet[0].endsWith(".geojson")) {
-      console.log("POLY SEARCH ...");
-      searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
+      console.log("POLY SEARCH ..."); //        searchArea = "(poly:\"51.5963 -2.68 51.7993 -2.7177 52.024 -2.5018 52.1453 -1.6328 51.372 -1.4746 50.4986 -1.718 49.6712 -6.9049 51.2258 -4.6939 51.3152 -3.3206 51.5963 -2.68\")";
+
       var i, thisJSON;
 
       for (i = 0; i < locJSON.features.length; i++) {
         //          console.log(locJSON.features[i].id)
         //          console.log(locJSON.features[i].geometry.coordinates)
-        if (locationSet[0] == locJSON.features[i].id) console.log(locationSet[0] + " matches " + locJSON.features[i].id);
+        if (locationSet[0] == locJSON.features[i].id) {
+          searchArea = "(poly:\"locJSON.features[i].geometry.coordinates\")";
+          console.log(locationSet[0] + " matches " + locJSON.features[i].id);
+          console.log(searchArea);
+        }
       }
     } else if (!isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ..."); // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
