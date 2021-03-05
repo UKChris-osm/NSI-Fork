@@ -396,6 +396,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       }
     } else {
       console.log("locationSet is 001 and so is global.");
+      searchArea = ";";
     }
 
 

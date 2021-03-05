@@ -19375,6 +19375,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
     }
   } else {
     console.log("locationSet is 001 and so is global.");
+    searchArea = ";";
   }
 
   OverpassTurboQuery += "(\n"; // Include any 'matchNames' as a name search.
