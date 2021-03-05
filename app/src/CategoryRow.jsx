@@ -364,7 +364,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
             console.log("    Final Poly search query: " + searchArea);
           }
         }
-      } else if (!isNaN(locationSet[0][0])) {
+      } else if ((typeof locationSet[0] === "object") && (!isNaN(locationSet[0][0]))) {
         console.log("RADIUS SEARCH ...");
 
         // locationSet Array within an Array & is a number, so likely GPS / Radius combo.

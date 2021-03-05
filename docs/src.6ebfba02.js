@@ -19345,7 +19345,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
           console.log("    Final Poly search query: " + searchArea);
         }
       }
-    } else if (!isNaN(locationSet[0][0])) {
+    } else if (_typeof(locationSet[0]) === "object" && !isNaN(locationSet[0][0])) {
       console.log("RADIUS SEARCH ..."); // locationSet Array within an Array & is a number, so likely GPS / Radius combo.
       // OverpassTurbo uses "around" function, but requires coords to be swapped.
 
