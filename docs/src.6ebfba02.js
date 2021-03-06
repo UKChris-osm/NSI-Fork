@@ -19271,6 +19271,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   var brand = "";
   var brandWikidata = "";
   var operator = "";
+  var operatorWikidata = "";
   var styling = "";
   var searchArea = ""; // Should remain blank unless searchArea is being used.
 
@@ -19400,6 +19401,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   if (itemData.tags.operator) operator = itemData.tags.operator;else operator = "none set";
   if (itemData.tags.brand) brand = itemData.tags.brand;else brand = "none set";
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
+  if (itemData.tags['operator:wikidata']) operatorWikidata = itemData.tags['operator:wikidata'];else operatorWikidata = "none set";
   if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
   if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
 
@@ -19431,9 +19433,9 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
   styling += "  { color:blue; fill-color:blue; }\n";
   styling += "  /* Yellow items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
-  styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "],\n";
-  styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "],\n";
-  styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "]\n"; //    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+  styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + brandWikidata + "],\n";
+  styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + brandWikidata + "],\n";
+  styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + brandWikidata + "]\n"; //    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
   //    styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
   //    styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
 
