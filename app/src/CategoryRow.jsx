@@ -443,8 +443,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
     if (operator != "none set") {
       OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
-      overPassKey = "operator"; // Set as the word "operator".
-      overPassValue = operator; // Set as the value of "operator".
+      overpassKey = "operator"; // Set as the word "operator".
+      overpassValue = operator; // Set as the value of "operator".
     }
 
     OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
@@ -453,9 +453,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "  node,way,relation\n";
     styling += "  { color:gray; fill-color:gray; }\n";
     styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name or type.*/\n\n";
-    styling += "  node[" + overPassKey + "=" + overPassValue + "],\n";
-    styling += "  way[" + overPassKey + "=" + overPassValue + "],\n";
-    styling += "  relation[" + overPassKey + "=" + overPassValue + "]\n";
+    styling += "  node[" + overpassKey + "=" + overpassValue + "],\n";
+    styling += "  way[" + overpassKey + "=" + overpassValue + "],\n";
+    styling += "  relation[" + overpassKey + "=" + overpassValue + "]\n";
 //    styling += "  node[name=" + name + "],\n";
 //    styling += "  way[name=" + name + "],\n";
 //    styling += "  relation[name=" + name + "]\n";
