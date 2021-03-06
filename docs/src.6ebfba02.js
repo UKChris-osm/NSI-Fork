@@ -19423,14 +19423,20 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
   styling += "  { color:red; fill-color:red; }\n";
   styling += "  /* Red items might be the same name,*/\n  /* but not the same type or brand.*/\n\n";
-  styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";
-  styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
-  styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
+  styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "],\n";
+  styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "],\n";
+  styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "]\n"; //    styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";
+  //    styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
+  //    styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
+
   styling += "  { color:blue; fill-color:blue; }\n";
   styling += "  /* Yellow items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
-  styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
-  styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
-  styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
+  styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "],\n";
+  styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "],\n";
+  styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][brand:wikidata=" + brandWikidata + "]\n"; //    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+  //    styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
+  //    styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
+
   styling += "  { color:green; fill-color:green; }\n";
   styling += "  /* Green items seem to have the right name, type and brand.*/\n\n";
   styling += "}}";
