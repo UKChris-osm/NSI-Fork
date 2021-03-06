@@ -298,6 +298,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let radius                = "25000"; // 25km radius, same as location-conflation radius.
     let overpassKey           = "";
     let overpassValue         = "";
+    let overpassWikidata      = "";
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
@@ -445,12 +446,18 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 
     if (name != "none set")
       OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
+      overpassKey      = "name";       // Set as the word "name".
+      overpassValue    = name;         // Set as the value of "name".
     if (brand != "none set")
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
+      overpassKey      = "brand";       // Set as the word "brand".
+      overpassValue    = brand;         // Set as the value of "brand".
+      overpassWikidata = brandWikidata; // Set as the value of "brand:wikidata".
     if (operator != "none set") {
       OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
-      overpassKey = "operator"; // Set as the word "operator".
-      overpassValue = operator; // Set as the value of "operator".
+      overpassKey      = "operator";       // Set as the word "operator".
+      overpassValue    = operator;         // Set as the value of "operator".
+      overpassWikidata = operatorWikidata; // Set as the value of "operator:wikidata".
     }
 
     OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
@@ -475,9 +482,9 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //    styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
     styling += "  { color:blue; fill-color:blue; }\n";
     styling += "  /* Yellow items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
-    styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + eval(overpassKey + "Wikidata") + "],\n";
-    styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + eval(overpassKey + "Wikidata") + "],\n";
-    styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + eval(overpassKey + "Wikidata") + "]\n";
+    styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
+    styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
+    styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "]\n";
 //    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
 //    styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
 //    styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
