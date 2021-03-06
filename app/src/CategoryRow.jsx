@@ -295,6 +295,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     let styling               = "";
     let searchArea            = ""; // Should remain blank unless searchArea is being used.
     let radius                = "25000"; // 25km radius, same as location-conflation radius.
+    let overpassKey           = "";
+    let overpassValue         = "";
     let OverpassTurboQueryURI = "";
     let OverpassTurboQuery    = "[out:json][timeout:100];\n"
 
@@ -439,8 +441,11 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
       OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
     if (brand != "none set")
       OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
-    if (operator != "none set")
+    if (operator != "none set") {
       OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
+      overPassKey = "operator"; // Set as the word "operator".
+      overPassValue = operator; // Set as the value of "operator".
+    }
 
     OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
 
@@ -448,9 +453,12 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     styling += "  node,way,relation\n";
     styling += "  { color:gray; fill-color:gray; }\n";
     styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name or type.*/\n\n";
-    styling += "  node[name=" + name + "],\n";
-    styling += "  way[name=" + name + "],\n";
-    styling += "  relation[name=" + name + "]\n";
+    styling += "  node[" + overPassKey + "=" + overPassValue + "],\n";
+    styling += "  way[" + overPassKey + "=" + overPassValue + "],\n";
+    styling += "  relation[" + overPassKey + "=" + overPassValue + "]\n";
+//    styling += "  node[name=" + name + "],\n";
+//    styling += "  way[name=" + name + "],\n";
+//    styling += "  relation[name=" + name + "]\n";
     styling += "  { color:red; fill-color:red; }\n";
     styling += "  /* Red items might be the same name,*/\n  /* but not the same type or brand.*/\n\n";
     styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";

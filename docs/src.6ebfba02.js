@@ -19276,6 +19276,8 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
   var radius = "25000"; // 25km radius, same as location-conflation radius.
 
+  var overpassKey = "";
+  var overpassValue = "";
   var OverpassTurboQueryURI = "";
   var OverpassTurboQuery = "[out:json][timeout:100];\n";
   console.log("== START ==============================================="); //    console.log("t: " + t);
@@ -19400,15 +19402,25 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   if (itemData.tags['brand:wikidata']) brandWikidata = itemData.tags['brand:wikidata'];else brandWikidata = "none set";
   if (name != "none set") OverpassTurboQuery += "  nwr[\"name\"=\"" + name + "\"]" + searchArea + "\n";
   if (brand != "none set") OverpassTurboQuery += "  nwr[\"brand\"=\"" + brand + "\"]" + searchArea + "\n";
-  if (operator != "none set") OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
+
+  if (operator != "none set") {
+    OverpassTurboQuery += "  nwr[\"operator\"=\"" + operator + "\"]" + searchArea + "\n";
+    overPassKey = "operator"; // Set as the word "operator".
+
+    overPassValue = operator; // Set as the value of "operator".
+  }
+
   OverpassTurboQuery += ");\nout body;\n>;\nout skel qt;\n\n";
   styling += "{{style:\n";
   styling += "  node,way,relation\n";
   styling += "  { color:gray; fill-color:gray; }\n";
   styling += "  /* Gray items might be part of the same brand,*/\n  /* but not the same name or type.*/\n\n";
-  styling += "  node[name=" + name + "],\n";
-  styling += "  way[name=" + name + "],\n";
-  styling += "  relation[name=" + name + "]\n";
+  styling += "  node[" + overPassKey + "=" + overPassValue + "],\n";
+  styling += "  way[" + overPassKey + "=" + overPassValue + "],\n";
+  styling += "  relation[" + overPassKey + "=" + overPassValue + "]\n"; //    styling += "  node[name=" + name + "],\n";
+  //    styling += "  way[name=" + name + "],\n";
+  //    styling += "  relation[name=" + name + "]\n";
+
   styling += "  { color:red; fill-color:red; }\n";
   styling += "  /* Red items might be the same name,*/\n  /* but not the same type or brand.*/\n\n";
   styling += "  node[" + k + "=" + v + "][name=" + name + "],\n";
