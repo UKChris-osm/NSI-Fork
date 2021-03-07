@@ -19444,7 +19444,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   //    styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
 
   styling += "  { color:blue; fill-color:blue; }\n";
-  styling += "  /* Yellow items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
+  styling += "  /* Blue items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
   styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
   styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
   styling += "  relation[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "]\n"; //    styling += "  node[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
