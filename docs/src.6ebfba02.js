@@ -19443,7 +19443,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   //    styling += "  way[" + k + "=" + v + "][name=" + name + "],\n";
   //    styling += "  relation[" + k + "=" + v + "][name=" + name + "]\n";
 
-  styling += "  { color:blue; fill-color:blue; }\n";
+  styling += "  { color:pink; fill-color:pink; }\n";
   styling += "  /* Blue items might be the same name and type,*/\n  /* but missing the correct brand.*/\n\n";
   styling += "  node[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
   styling += "  way[" + k + "=" + v + "][" + overpassKey + "=" + overpassValue + "][" + overpassKey + ":wikidata=" + overpassWikidata + "],\n";
@@ -19451,8 +19451,8 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
   //    styling += "  way[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "],\n";
   //    styling += "  relation[" + k + "=" + v + "][name=" + name + "][brand=" + brand + "][brand:wikidata=" + brandWikidata + "]\n";
 
-  styling += "  { color:green; fill-color:green; }\n";
-  styling += "  /* Green items seem to have the right name, type and brand.*/\n\n";
+  styling += "  { color:blue; fill-color:blue; }\n";
+  styling += "  /* Blue items have all the items listed in the Name Suggeston Index.*/\n\n";
   styling += "}}";
   OverpassTurboQuery += styling;
   console.log("matchNames is a " + _typeof(matchNames) + ", with a length of " + matchNames.length + ", and contains ...");
