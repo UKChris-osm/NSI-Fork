@@ -392,6 +392,8 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
             thisLocation = "Scotland";
           if (thisLocation == "gb-nir") // change 'gb-nir' to 'Northern Ireland'.
             thisLocation = "Northern Ireland";
+          if (thisLocation == "conus") // change 'conus' to 'USA'.
+            thisLocation = "USA";
 
           // Add 'geocodeArea' for this location
           OverpassTurboQuery += "  {{geocodeArea:" + thisLocation + "}};\n";
