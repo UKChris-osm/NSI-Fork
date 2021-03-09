@@ -324,6 +324,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
 //    console.log(locJSON.features[0].geometry);
 //    console.log("locJSON.features[0].geometry.coordinates typeof: " + typeof locJSON.features[0].geometry.coordinates);
 //    console.log(locJSON.features[0].geometry.coordinates);
+console.log(JSON.stringify(locJSON));
 
     // Build a basic location search if locationSet isn't set to world (001)
     // or doesn't include a custom .geojson file.
