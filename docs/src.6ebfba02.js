@@ -19218,7 +19218,7 @@ function CategoryRow(props) {
       target: "_blank",
       href: href,
       title: title
-    }, "Search Overpass Turbo");
+    }, "Search Overpass Turbo (basic search)");
   }
 
   function fblogo(username, src) {
@@ -19477,7 +19477,7 @@ function buildOverpassTurbo(itemData, features, t, k, v) {
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("pre", null, OverpassTurboQuery)), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("a", {
     href: OverpassTurboQueryURI
-  }, "Try query")));
+  }, "Search Overpass Turbo (advance search)")));
 }
 },{"react":"n8MK","react-router-dom":"uc19","./CategoryRowSocialLinks":"GZ5J"}],"z2FW":[function(require,module,exports) {
 "use strict";

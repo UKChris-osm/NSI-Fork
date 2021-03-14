@@ -240,7 +240,7 @@ relation[${k}=${v}][network=${n}][network:wikidata=${qid}]
     const q = encodeURIComponent(overpassQuery);
     const href = `https://overpass-turbo.eu/?Q=${q}&R`;
     const title = `Search Overpass Turbo for ${n}`;
-    return (<a target='_blank' href={href} title={title}>Search Overpass Turbo</a>);
+    return (<a target='_blank' href={href} title={title}>Search Overpass Turbo (basic search)</a>);
   }
 
   function fblogo(username, src) {
@@ -520,7 +520,7 @@ console.log(JSON.stringify(locJSON));
     return (
       <>
       <p><pre>{OverpassTurboQuery}</pre></p>
-      <p><a href={OverpassTurboQueryURI}>Try query</a></p>
+      <p><a href={OverpassTurboQueryURI}>Search Overpass Turbo (advance search)</a></p>
       </>
     );
   }
