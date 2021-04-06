@@ -19950,7 +19950,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function OverviewInstructions(props) {
   // setup defaults for this tree..
   var t = props.t;
-  console.log(props);
+  var data = props.data;
+  console.log(data);
   var itemType, wikidataTag;
 
   if (t === 'brands') {
