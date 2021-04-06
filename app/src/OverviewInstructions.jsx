@@ -4,7 +4,7 @@ import React from 'react';
 export default function OverviewInstructions(props) {
   // setup defaults for this tree..
   const t = props.t;
-console.log(props.data);
+console.log(props);
   let itemType, wikidataTag;
   if (t === 'brands') {
     itemType = 'brand';
