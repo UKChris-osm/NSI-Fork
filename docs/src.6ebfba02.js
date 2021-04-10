@@ -19928,10 +19928,14 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Footer() {
+function Footer(props) {
+  var index = props.index;
+  var meta = index && index.meta;
+  var version = meta && meta.version;
+  var display = version && "NSI v".concat(version);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "footer"
-  });
+    id: "footer"
+  }, display);
 }
 
 ;
@@ -19950,8 +19954,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function OverviewInstructions(props) {
   // setup defaults for this tree..
   var t = props.t;
-  var data = props.data;
-  console.log(data);
   var itemType, wikidataTag;
 
   if (t === 'brands') {
@@ -20241,7 +20243,9 @@ function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",
     render: render
-  })), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
+  })), /*#__PURE__*/_react.default.createElement(_Footer.default, {
+    index: appData.index
+  }));
 
   function render(routeProps) {
     var oldSearch = routeProps.location.search;
