@@ -19532,12 +19532,14 @@ function Filters(props) {
     name: "cc",
     list: "geojsonlist",
     autocorrect: "off",
-    maxlength: "6",
-    size: "3",
+    maxlength: "50",
+    size: "5",
     value: cc,
     onChange: filtersChanged
   }), /*#__PURE__*/_react.default.createElement("datalist", {
     id: "geojsonlist"
+  }, /*#__PURE__*/_react.default.createElement("optgroup", {
+    label: "Australia"
   }, /*#__PURE__*/_react.default.createElement("option", {
     value: "au-act.geojson"
   }), /*#__PURE__*/_react.default.createElement("option", {
@@ -19549,12 +19551,14 @@ function Filters(props) {
   }), /*#__PURE__*/_react.default.createElement("option", {
     value: "au-sa.geojson"
   }), /*#__PURE__*/_react.default.createElement("option", {
-    value: "gb-vic.geojson"
+    value: "au-vic.geojson"
   }), /*#__PURE__*/_react.default.createElement("option", {
-    value: "gb-wa.geojson"
-  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "au-wa.geojson"
+  })), /*#__PURE__*/_react.default.createElement("optgroup", {
+    label: "Great Britain"
+  }, /*#__PURE__*/_react.default.createElement("option", {
     value: "gb-south-west.geojson"
-  }))), /*#__PURE__*/_react.default.createElement("span", {
+  })))), /*#__PURE__*/_react.default.createElement("span", {
     className: "field"
   }, /*#__PURE__*/_react.default.createElement("label", {
     for: "inc"

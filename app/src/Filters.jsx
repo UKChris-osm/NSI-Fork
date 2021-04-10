@@ -26,17 +26,21 @@ export default function Filters(props) {
 
     <span className='field'>
       <label for='cc'>Country Code:</label>
-      <input type='text' id='cc' name='cc' list='geojsonlist' autocorrect='off' maxlength='6' size='3'
+      <input type='text' id='cc' name='cc' list='geojsonlist' autocorrect='off' maxlength='50' size='5'
         value={cc} onChange={filtersChanged} />
       <datalist id='geojsonlist'>
+        <optgroup label='Australia'>
         <option value='au-act.geojson'/>
         <option value='au-nsw.geojson'/>
         <option value='au-nt.geojson'/>
         <option value='au-qld.geojson'/>
         <option value='au-sa.geojson'/>
-        <option value='gb-vic.geojson'/>
-        <option value='gb-wa.geojson'/>
+        <option value='au-vic.geojson'/>
+        <option value='au-wa.geojson'/>
+        </optgroup>
+        <optgroup label='Great Britain'>
         <option value='gb-south-west.geojson'/>
+        </optgroup>
       </datalist>
     </span>
 
