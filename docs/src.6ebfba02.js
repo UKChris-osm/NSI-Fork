@@ -19530,10 +19530,10 @@ function Filters(props) {
     type: "text",
     id: "cc",
     name: "cc",
-    list: "geojsonlist",
+    "data-optgroup-list": "geojsonlist",
     autocorrect: "off",
     maxlength: "50",
-    size: "15",
+    size: "20",
     value: cc,
     onChange: filtersChanged
   }), /*#__PURE__*/_react.default.createElement("datalist", {

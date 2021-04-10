@@ -26,7 +26,7 @@ export default function Filters(props) {
 
     <span className='field'>
       <label for='cc'>Country Code:</label>
-      <input type='text' id='cc' name='cc' list='geojsonlist' autocorrect='off' maxlength='50' size='15'
+      <input type='text' id='cc' name='cc' data-optgroup-list='geojsonlist' autocorrect='off' maxlength='50' size='20'
         value={cc} onChange={filtersChanged} />
       <datalist id='geojsonlist'>
         <optgroup label='Australia'>
