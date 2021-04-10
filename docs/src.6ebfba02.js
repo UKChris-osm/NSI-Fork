@@ -19539,7 +19539,21 @@ function Filters(props) {
   }), /*#__PURE__*/_react.default.createElement("datalist", {
     id: "geojsonlist"
   }, /*#__PURE__*/_react.default.createElement("option", {
-    value: "gb-som.geojson"
+    value: "au-act.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "au-nsw.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "au-nt.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "au-qld.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "au-sa.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "gb-vic.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "gb-wa.geojson"
+  }), /*#__PURE__*/_react.default.createElement("option", {
+    value: "gb-south-west.geojson"
   }))), /*#__PURE__*/_react.default.createElement("span", {
     className: "field"
   }, /*#__PURE__*/_react.default.createElement("label", {

@@ -29,7 +29,14 @@ export default function Filters(props) {
       <input type='text' id='cc' name='cc' list='geojsonlist' autocorrect='off' maxlength='6' size='3'
         value={cc} onChange={filtersChanged} />
       <datalist id='geojsonlist'>
-        <option value='gb-som.geojson'/>
+        <option value='au-act.geojson'/>
+        <option value='au-nsw.geojson'/>
+        <option value='au-nt.geojson'/>
+        <option value='au-qld.geojson'/>
+        <option value='au-sa.geojson'/>
+        <option value='gb-vic.geojson'/>
+        <option value='gb-wa.geojson'/>
+        <option value='gb-south-west.geojson'/>
       </datalist>
     </span>
 
