@@ -19533,7 +19533,7 @@ function Filters(props) {
     list: "geojsonlist",
     autocorrect: "off",
     maxlength: "50",
-    size: "5",
+    size: "15",
     value: cc,
     onChange: filtersChanged
   }), /*#__PURE__*/_react.default.createElement("datalist", {
