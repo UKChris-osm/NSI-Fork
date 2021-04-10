@@ -19931,6 +19931,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Footer(props) {
   var index = props.index;
   var meta = index && index.meta;
+  console.log("# # # # # #Footer Start:");
+  console.log(meta);
+  console.log("# # # # # #Footer End.");
   var version = meta && meta.version;
   var display = version && "NSI v".concat(version);
   return /*#__PURE__*/_react.default.createElement("div", {
