@@ -19980,7 +19980,7 @@ function OverviewInstructions(props) {
   }, "\uD83D\uDC4B"), "Hi! This project is called ", /*#__PURE__*/_react.default.createElement("a", {
     target: "_blank",
     href: "https://github.com/osmlab/name-suggestion-index/"
-  }, "name-suggestion-index"), ", version five ($$) which was published $$.", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), "We've collected a list of common ", itemType, " names from ", /*#__PURE__*/_react.default.createElement("a", {
+  }, "name-suggestion-index"), ".", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), "We've collected a list of common ", itemType, " names from ", /*#__PURE__*/_react.default.createElement("a", {
     target: "_blank",
     href: "https://www.openstreetmap.org"
   }, "OpenStreetMap"), ", and we're matching them all to their preferred tags, including a ", /*#__PURE__*/_react.default.createElement("code", null, "'", wikidataTag, "'"), " tag.", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), "This tag is pretty special because we can use it to link features in OpenStreetMap to records in ", /*#__PURE__*/_react.default.createElement("a", {

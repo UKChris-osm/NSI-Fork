@@ -22,7 +22,7 @@ export default function OverviewInstructions(props) {
 
   return (
     <>
-    <div className='instructions'><span className='hi'>👋</span>Hi! This project is called <a target='_blank' href='https://github.com/osmlab/name-suggestion-index/'>name-suggestion-index</a>, version five ($$) which was published $$.<br/>
+    <div className='instructions'><span className='hi'>👋</span>Hi! This project is called <a target='_blank' href='https://github.com/osmlab/name-suggestion-index/'>name-suggestion-index</a>.<br/>
     <br/>
     We've collected a list of common {itemType} names from <a target='_blank' href='https://www.openstreetmap.org'>OpenStreetMap</a>,
     and we're matching them all to their preferred tags, including a <code>'{wikidataTag}'</code> tag.<br/>
