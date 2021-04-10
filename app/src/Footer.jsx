@@ -7,7 +7,8 @@ export default function Footer(props) {
   console.log(meta);
   console.log("# # # # # #Footer End.");
   const version = meta && meta.version;
-  const display = version && `NSI v${version}`;
+  const generated = meta.generated;
+  const display = version && `NSI v${version} (${generated})`;
   return (
     <div id='footer'>{display}</div>
   );
