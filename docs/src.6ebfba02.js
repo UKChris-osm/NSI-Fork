@@ -19530,12 +19530,17 @@ function Filters(props) {
     type: "text",
     id: "cc",
     name: "cc",
+    list: "geojsonlist",
     autocorrect: "off",
     maxlength: "6",
     size: "3",
     value: cc,
     onChange: filtersChanged
-  })), /*#__PURE__*/_react.default.createElement("span", {
+  }), /*#__PURE__*/_react.default.createElement("datalist", {
+    id: "geojsonlist"
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: "gb-som.geojson"
+  }))), /*#__PURE__*/_react.default.createElement("span", {
     className: "field"
   }, /*#__PURE__*/_react.default.createElement("label", {
     for: "inc"
