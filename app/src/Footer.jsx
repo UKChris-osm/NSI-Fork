@@ -8,7 +8,8 @@ export default function Footer(props) {
   console.log("# # # # # #Footer End.");
   const version = meta && meta.version;
   const generated = meta && meta.generated;
-  const display = generated && version && `NSI v${version} (${generated})`;
+  const released = generated && new Date(Date.parse(generated));
+  const display = released && version && `NSI v${version} (${released})`;
   return (
     <div id='footer'>{display}</div>
   );

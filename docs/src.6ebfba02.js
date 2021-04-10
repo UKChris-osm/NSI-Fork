@@ -19955,7 +19955,8 @@ function Footer(props) {
   console.log("# # # # # #Footer End.");
   var version = meta && meta.version;
   var generated = meta && meta.generated;
-  var display = generated && version && "NSI v".concat(version, " (").concat(generated, ")");
+  var released = generated && new Date(Date.parse(generated));
+  var display = released && version && "NSI v".concat(version, " (").concat(released, ")");
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "footer"
   }, display);
