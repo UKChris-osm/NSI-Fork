@@ -36,7 +36,7 @@ export default function Filters(props) {
         <option value='au-sa.geojson'/>
         <option value='au-vic.geojson'/>
         <option value='au-wa.geojson'/>
-        <option value='gb-south-west.geojson'/>
+        <option value='gb-south-west.geojson'>South West of England</option>
       </datalist>
     </span>
 

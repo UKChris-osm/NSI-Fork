@@ -19554,7 +19554,7 @@ function Filters(props) {
     value: "au-wa.geojson"
   }), /*#__PURE__*/_react.default.createElement("option", {
     value: "gb-south-west.geojson"
-  }))), /*#__PURE__*/_react.default.createElement("span", {
+  }, "South West of England"))), /*#__PURE__*/_react.default.createElement("span", {
     className: "field"
   }, /*#__PURE__*/_react.default.createElement("label", {
     for: "inc"
