@@ -19953,8 +19953,12 @@ function Footer(props) {
   var version = meta && meta.version;
   var generated = meta && meta.generated;
   var released = generated && new Date(Date.parse(generated));
-  var trimmed = generated && released.getFullYear() + " " + released.getMonth();
-  var display = released && version && "NSI v".concat(version, " (Generated: ").concat(released, " [").concat(trimmed, "])");
+  var options = {
+    month: 'long'
+  }; //  const trimmed = generated && released.getFullYear() + " " + released.getMonth();
+
+  var trimmed = released && released.str.split(' ');
+  var display = released && version && "NSI v".concat(version, " (Generated: ").concat(released, " [").concat(trimmed[0], " ").concat(trimmed[1], " ").concat(trimmed[2], "])");
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "footer"
   }, display);
