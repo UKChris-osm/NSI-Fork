@@ -9,7 +9,7 @@ export default function Footer(props) {
 
   let options = { month: 'long'};
 //  const trimmed = generated && released.getFullYear() + " " + released.getMonth();
-  const trimmed = released && released.split(' ') + '';
+  const trimmed = released.split(' ') + '';
   const display = released && version && `NSI v${version} (Generated: ${released} [${trimmed[0]} ${trimmed[1]} ${trimmed[2]}])`;
   return (
     <div id='footer'>{display}</div>
