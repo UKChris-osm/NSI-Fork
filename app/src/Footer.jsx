@@ -7,7 +7,7 @@ export default function Footer(props) {
   const generated = meta && meta.generated;
   const released = generated && new Date(Date.parse(generated));
 
-  const trimmed = generated && released.getFullYear();
+  const trimmed = generated && released.getFullYear() + " " + released.getMonth();
   const display = released && version && `NSI v${version} (Generated: ${released} [${trimmed}])`;
   return (
     <div id='footer'>{display}</div>
