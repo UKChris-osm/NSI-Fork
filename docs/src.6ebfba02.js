@@ -19957,7 +19957,7 @@ function Footer(props) {
     month: 'long'
   }; //  const trimmed = generated && released.getFullYear() + " " + released.getMonth();
 
-  var trimmed = released && released.str.split(' ');
+  var trimmed = released && released.split(' ');
   var display = released && version && "NSI v".concat(version, " (Generated: ").concat(released, " [").concat(trimmed[0], " ").concat(trimmed[1], " ").concat(trimmed[2], "])");
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "footer"
